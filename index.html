@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lưu lại — Nhật ký của tôi</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #eee8df;
+    color: #514b45;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.page {
+    width: 92%;
+    max-width: 1050px;
+    margin: 45px auto;
+    background: #fffdf9;
+    min-height: 90vh;
+    box-shadow: 0 8px 35px rgba(60,50,40,.12);
+}
+
+.header {
+    text-align: center;
+    padding: 65px 25px 45px;
+    background: #f4eee5;
+    border-bottom: 1px solid #ddd3c7;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    color: #655c54;
+}
+
+.header p {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #9a9085;
+    font-style: italic;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 17px;
+    border-bottom: 1px solid #e3dbd2;
+    font-size: 14px;
+}
+
+.menu a {
+    color: #756b62;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #b48b72;
+}
+
+.content {
+    padding: 45px 9%;
+}
+
+.date {
+    font-size: 13px;
+    color: #a59688;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 12px 0 20px;
+    color: #5b534c;
+}
+
+.line {
+    width: 55px;
+    height: 1px;
+    background: #c7b5a3;
+    margin-bottom: 25px;
+}
+
+.entry {
+    line-height: 1.9;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+.photo {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.photo img {
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.quote {
+    margin: 35px 0;
+    padding: 20px 25px;
+    border-left: 2px solid #c9b8a8;
+    color: #87796c;
+    font-style: italic;
+}
+
+.footer {
+    text-align: center;
+    padding: 35px;
+    color: #aaa096;
+    font-size: 13px;
+    border-top: 1px solid #e5ddd4;
+}
+
+button {
+    border: 1px solid #d2c5b8;
+    background: #f7f2eb;
+    color: #756b62;
+    padding: 9px 18px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #ece3d8;
+}
+
+#diary {
+    margin-top: 30px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd2c6;
+    background: #fffdfa;
+    font-family: inherit;
+    color: #514b45;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form {
+    display: none;
+    margin-top: 35px;
+    padding: 25px;
+    background: #f8f3ec;
+}
+
+.form label {
+    display: block;
+    margin: 15px 0 7px;
+    font-size: 14px;
+}
+
+.entry-card {
+    padding: 25px 0;
+    border-bottom: 1px solid #e5ddd4;
+}
+
+.entry-card h3 {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 8px 0 15px;
+}
+
+.entry-card .small-date {
+    font-size: 12px;
+    color: #a59688;
+    letter-spacing: 1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+    <h1>LƯU LẠI</h1>
+    <p>những ngày tôi đã sống</p>
+</header>
+
+<nav class="menu">
+    <a href="#" onclick="showHome()">Trang chủ</a>
+    <a href="#" onclick="showDiary()">Nhật ký</a>
+    <a href="#" onclick="newEntry()">+ Viết nhật ký</a>
+</nav>
+
+<main class="content">
+
+<section id="home">
+
+    <div class="date">12.08.2026</div>
+
+    <h2 class="title">Những ngày bình thường</h2>
+
+    <div class="line"></div>
+
+    <div class="entry">
+Có những ngày chẳng có chuyện gì đặc biệt.
+
+Một ngày trôi qua rất bình thường,
+nhưng đôi khi nhiều năm sau,
+mình lại nhớ chính những ngày như thế.
+
+Vì vậy mình muốn lưu lại.
+
+Không phải để ai đọc.
+Không phải để kể cho ai nghe.
+
+Chỉ là muốn sau này,
+khi nhìn lại,
+mình vẫn nhớ rằng mình đã từng sống những ngày này.
+    </div>
+
+    <div class="quote">
+        "Có những điều rất nhỏ, nhưng khi thời gian đi qua,
+        chúng lại trở thành những điều mình nhớ nhất."
+    </div>
+
+</section>
+
+<section id="diary" style="display:none;">
+    <h2 class="title">Nhật ký</h2>
+    <div class="line"></div>
+    <div id="entries"></div>
+</section>
+
+<section id="write" class="form">
+
+    <h2 class="title">Viết một điều để lưu lại</h2>
+
+    <label>Ngày</label>
+    <input type="date" id="entryDate">
+
+    <label>Tiêu đề</label>
+    <input type="text" id="entryTitle" placeholder="Hôm nay...">
+
+    <label>Nhật ký</label>
+    <textarea id="entryText" placeholder="Viết những điều bạn muốn nhớ..."></textarea>
+
+    <br><br>
+
+    <button onclick="saveEntry()">Lưu lại</button>
+
+</section>
+
+</main>
+
+<footer class="footer">
+    Một góc nhỏ của riêng tôi · Lưu lại những ngày đã sống
+</footer>
+
+</div>
+
+<script>
+
+function showHome() {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("diary").style.display = "none";
+    document.getElementById("write").style.display = "none";
+}
+
+function showDiary() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("diary").style.display = "block";
+    document.getElementById("write").style.display = "none";
+    loadEntries();
+}
+
+function newEntry() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("diary").style.display = "none";
+    document.getElementById("write").style.display = "block";
+
+    document.getElementById("entryDate").value =
+        new Date().toISOString().split("T")[0];
+}
+
+function saveEntry() {
+
+    const date = document.getElementById("entryDate").value;
+    const title = document.getElementById("entryTitle").value;
+    const text = document.getElementById("entryText").value;
+
+    if (!title || !text) {
+        alert("Bạn hãy nhập tiêu đề và nội dung nhé.");
+        return;
+    }
+
+    let entries = JSON.parse(localStorage.getItem("myDiary") || "[]");
+
+    entries.unshift({
+        date: date,
+        title: title,
+        text: text
+    });
+
+    localStorage.setItem("myDiary", JSON.stringify(entries));
+
+    document.getElementById("entryTitle").value = "";
+    document.getElementById("entryText").value = "";
+
+    alert("Đã lưu lại ❤️");
+
+    showDiary();
+}
+
+function loadEntries() {
+
+    const box = document.getElementById("entries");
+
+    let entries = JSON.parse(localStorage.getItem("myDiary") || "[]");
+
+    if (entries.length === 0) {
+        box.innerHTML =
+            "<p>Chưa có kỷ niệm nào được lưu.</p>";
+        return;
+    }
+
+    box.innerHTML = "";
+
+    entries.forEach(function(entry) {
+
+        const div = document.createElement("div");
+        div.className = "entry-card";
+
+        div.innerHTML = `
+            <div class="small-date">${entry.date}</div>
+            <h3>${escapeHtml(entry.title)}</h3>
+            <div class="entry">${escapeHtml(entry.text)}</div>
+        `;
+
+        box.appendChild(div);
+    });
+}
+
+function escapeHtml(text) {
+
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+</script>
+
+</body>
+</html>
