@@ -1886,6 +1886,80 @@ function renderTimeline(){
     const box =
         document.getElementById("timelineList");
 
+    if(!entries.length){
+
+        box.innerHTML = `
+            <div class="empty">
+                Chưa có dấu mốc nào.
+            </div>
+        `;
+
+        return;
+    }
+
+    const sorted =
+        [...entries].sort(
+            (a,b) =>
+                String(b.date)
+                    .localeCompare(
+                        String(a.date)
+                    )
+        );
+
+    box.innerHTML =
+        sorted.map(item => `
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    ${formatDate(item.date)}
+                </div>
+
+                <h3>
+                    ${escapeHTML(item.title)}
+                </h3>
+
+                <div class="card-text">
+                    ${escapeHTML(
+                        (item.text || "").substring(0,180)
+                    )}
+                    ${
+                        (item.text || "").length > 180
+                        ? "..."
+                        : ""
+                    }
+                </div>
+
+                <div class="card-actions">
+
+                    <button
+                        type="button"
+                        class="text-btn"
+                        onclick="editEntry(${Number(item.id)})">
+
+                        ✎ Sửa
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="text-btn delete-btn"
+                        onclick="deleteEntry(${Number(item.id)})">
+
+                        × Xóa
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `).join("");
+}
+
+    const box =
+        document.getElementById("timelineList");
+
 
     if(!entries.length){
 
