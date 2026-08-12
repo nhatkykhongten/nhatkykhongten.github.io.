@@ -7,6 +7,8 @@
 <title>LƯU LẠI — Nhật ký của tôi</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
+
 :root{
     --paper:#f8f5ef;
     --paper2:#fffdf9;
@@ -18,19 +20,25 @@
     --dark:#35312d;
 }
 
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     margin:0;
     background:#e9e3da;
     color:var(--ink);
-    font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;
-
+    font-family:"Noto Serif",Georgia,"Times New Roman",serif;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
     font-family:inherit;
 }
 
@@ -38,7 +46,9 @@ button{
     cursor:pointer;
 }
 
-/* ===== MAIN ===== */
+/* =========================
+   KHUNG CHÍNH
+========================= */
 
 .wrapper{
     width:min(1180px,94%);
@@ -48,62 +58,57 @@ button{
     min-height:90vh;
 }
 
-/* ===== HEADER ===== */
+/* =========================
+   ẢNH BÌA
+========================= */
 
 .hero{
-    min-height:330px;
-    display:flex;
-    align-items:flex-end;
-    padding:55px;
-    position:relative;
-    overflow:hidden;
-    background:
-        linear-gradient(120deg,rgba(244,239,231,.97),rgba(244,239,231,.72)),
-        radial-gradient(circle at 75% 20%,#d8d0c5,transparent 35%);
+    background:var(--paper2);
 }
 
-.hero:after{
-    content:"";
-    position:absolute;
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    background:rgba(207,193,178,.2);
-    right:-70px;
-    top:-80px;
+.cover-image{
+    display:block;
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    object-position:center;
+    filter:saturate(.72) contrast(.96) brightness(.98);
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
+    padding:28px 55px 30px;
+    background:var(--paper2);
+    border-bottom:1px solid var(--line);
 }
 
 .logo{
-    font-size:50px;
-    letter-spacing:8px;
+    font-size:42px;
+    letter-spacing:7px;
     font-weight:normal;
     margin:0;
+    color:#49443f;
 }
 
 .subtitle{
     color:var(--muted);
-    margin:12px 0 0;
-    font-size:16px;
+    margin:9px 0 0;
+    font-size:15px;
     font-style:italic;
 }
 
 .small-note{
-    margin-top:25px;
-    font-size:13px;
+    margin-top:14px;
+    font-size:12px;
     color:#a79c91;
 }
 
-/* ===== NAV ===== */
+/* =========================
+   MENU
+========================= */
 
 .nav{
     display:flex;
     justify-content:center;
-    gap:0;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
     background:#fffdfa;
@@ -115,9 +120,10 @@ button{
 .nav button{
     border:0;
     background:transparent;
-    padding:18px 25px;
+    padding:17px 25px;
     color:#776f67;
-    font-size:14px;
+    font-family:"Be Vietnam Pro",Arial,sans-serif;
+    font-size:12px;
 }
 
 .nav button:hover,
@@ -126,12 +132,13 @@ button{
     background:#f3eee7;
 }
 
-/* ===== LAYOUT ===== */
+/* =========================
+   BỐ CỤC
+========================= */
 
 .layout{
     display:grid;
     grid-template-columns:250px 1fr;
-    gap:0;
 }
 
 .sidebar{
@@ -186,8 +193,6 @@ button{
     font-weight:normal;
 }
 
-/* ===== CONTENT ===== */
-
 .content{
     padding:45px 55px 70px;
     min-height:700px;
@@ -220,7 +225,9 @@ button{
     margin:18px 0 35px;
 }
 
-/* ===== HOME ===== */
+/* =========================
+   TRANG CHỦ
+========================= */
 
 .welcome{
     padding:25px 0 35px;
@@ -255,7 +262,9 @@ button{
     line-height:1.8;
 }
 
-/* ===== DIARY ===== */
+/* =========================
+   NHẬT KÝ
+========================= */
 
 .diary-card{
     padding:30px 0;
@@ -295,7 +304,7 @@ button{
 
 .card-photo{
     width:100%;
-    max-height:400px;
+    max-height:500px;
     object-fit:cover;
     margin-top:20px;
 }
@@ -313,7 +322,14 @@ button{
     font-size:12px;
 }
 
-/* ===== ALBUM ===== */
+.text-btn:hover{
+    color:#51483f;
+    text-decoration:underline;
+}
+
+/* =========================
+   ALBUM
+========================= */
 
 .album-grid{
     display:grid;
@@ -325,7 +341,6 @@ button{
     aspect-ratio:1/1;
     overflow:hidden;
     background:#eee8df;
-    position:relative;
 }
 
 .album-item img{
@@ -346,7 +361,9 @@ button{
     color:#9b9084;
 }
 
-/* ===== TIMELINE ===== */
+/* =========================
+   DÒNG THỜI GIAN
+========================= */
 
 .timeline{
     border-left:1px solid #d9cec2;
@@ -376,7 +393,9 @@ button{
     letter-spacing:2px;
 }
 
-/* ===== WRITE ===== */
+/* =========================
+   VIẾT
+========================= */
 
 .form-row{
     margin-bottom:18px;
@@ -384,12 +403,15 @@ button{
 
 .form-row label{
     display:block;
-    font-size:13px;
+    font-family:"Be Vietnam Pro",Arial,sans-serif;
+    font-size:12px;
     margin-bottom:8px;
     color:#746b63;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
     width:100%;
     border:1px solid #ddd3c8;
     background:#fffdfa;
@@ -415,6 +437,7 @@ textarea{
     display:flex;
     gap:10px;
     margin-top:20px;
+    flex-wrap:wrap;
 }
 
 .primary{
@@ -431,13 +454,21 @@ textarea{
     padding:12px 22px;
 }
 
-/* ===== SEARCH ===== */
+.primary:hover{
+    background:#514941;
+}
+
+/* =========================
+   TÌM KIẾM
+========================= */
 
 .search{
     margin-bottom:30px;
 }
 
-/* ===== FOOTER ===== */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
     border-top:1px solid var(--line);
@@ -445,10 +476,11 @@ textarea{
     padding:30px;
     color:#aaa097;
     font-size:12px;
-    letter-spacing:.5px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =========================
+   ĐIỆN THOẠI
+========================= */
 
 @media(max-width:800px){
 
@@ -457,13 +489,17 @@ textarea{
         margin:0;
     }
 
-    .hero{
-        min-height:260px;
-        padding:35px 25px;
+    .cover-image{
+        height:220px;
+    }
+
+    .hero-content{
+        padding:24px 25px 26px;
     }
 
     .logo{
-        font-size:38px;
+        font-size:34px;
+        letter-spacing:5px;
     }
 
     .nav{
@@ -497,13 +533,29 @@ textarea{
 
 @media(max-width:480px){
 
+    .cover-image{
+        height:190px;
+    }
+
+    .logo{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .welcome h2{
+        font-size:28px;
+    }
+
     .album-grid{
         grid-template-columns:1fr 1fr;
         gap:8px;
     }
 
-    .welcome h2{
-        font-size:28px;
+    .diary-card h3{
+        font-size:22px;
     }
 }
 </style>
@@ -514,38 +566,61 @@ textarea{
 <div class="wrapper">
 
 <header class="hero">
+
+    <!-- ẢNH BÌA: đặt file cover.jpg cùng thư mục với index.html -->
+    <img
+        class="cover-image"
+        src="cover.jpg"
+        alt="Ảnh bìa LƯU LẠI"
+    >
+
     <div class="hero-content">
+
         <h1 class="logo">LƯU LẠI</h1>
-        <div class="subtitle">những ngày tôi đã sống</div>
+
+        <div class="subtitle">
+            những ngày tôi đã sống
+        </div>
+
         <div class="small-note">
             Một góc nhỏ để cất những điều không muốn quên.
         </div>
+
     </div>
+
 </header>
+
 
 <nav class="nav">
 
-    <button class="active" onclick="showSection('home',this)">
+    <button
+        class="active"
+        onclick="showSection('home',this)">
         Trang chủ
     </button>
 
-    <button onclick="showSection('diary',this)">
+    <button
+        onclick="showSection('diary',this)">
         Nhật ký
     </button>
 
-    <button onclick="showSection('album',this)">
+    <button
+        onclick="showSection('album',this)">
         Album
     </button>
 
-    <button onclick="showSection('timeline',this)">
+    <button
+        onclick="showSection('timeline',this)">
         Dòng thời gian
     </button>
 
-    <button onclick="showSection('write',this)">
+    <button
+        onclick="showSection('write',this)">
         + Viết
     </button>
 
 </nav>
+
 
 <div class="layout">
 
@@ -589,10 +664,13 @@ textarea{
     <div class="side-line"></div>
 
     <div class="side-info">
+
         <strong>“</strong><br>
+
         Có những điều rất nhỏ,
         nhưng nhiều năm sau
         lại trở thành điều mình nhớ nhất.
+
     </div>
 
 </aside>
@@ -601,13 +679,18 @@ textarea{
 <main class="content">
 
 
-<!-- HOME -->
+<!-- =========================
+     TRANG CHỦ
+========================= -->
 
 <section id="home" class="section active">
 
     <div class="welcome">
 
-        <div class="welcome-date" id="todayText"></div>
+        <div
+            class="welcome-date"
+            id="todayText">
+        </div>
 
         <h2>
             Hôm nay,<br>
@@ -636,9 +719,11 @@ textarea{
         </div>
 
         <div class="quote">
+
             “Không phải để người khác đọc.
             Chỉ là để sau này,
             mình vẫn nhớ mình đã từng là mình.”
+
         </div>
 
     </div>
@@ -646,11 +731,15 @@ textarea{
 </section>
 
 
-<!-- DIARY -->
+<!-- =========================
+     NHẬT KÝ
+========================= -->
 
 <section id="diary" class="section">
 
-    <h2 class="section-title">Nhật ký</h2>
+    <h2 class="section-title">
+        Nhật ký
+    </h2>
 
     <div class="section-desc">
         Những điều tôi muốn giữ lại.
@@ -668,45 +757,64 @@ textarea{
 </section>
 
 
-<!-- ALBUM -->
+<!-- =========================
+     ALBUM
+========================= -->
 
 <section id="album" class="section">
 
-    <h2 class="section-title">Album</h2>
+    <h2 class="section-title">
+        Album
+    </h2>
 
     <div class="section-desc">
         Những khoảnh khắc được giữ lại bằng hình ảnh.
     </div>
 
-    <div id="albumGrid" class="album-grid"></div>
+    <div
+        id="albumGrid"
+        class="album-grid">
+    </div>
 
 </section>
 
 
-<!-- TIMELINE -->
+<!-- =========================
+     DÒNG THỜI GIAN
+========================= -->
 
 <section id="timeline" class="section">
 
-    <h2 class="section-title">Dòng thời gian</h2>
+    <h2 class="section-title">
+        Dòng thời gian
+    </h2>
 
     <div class="section-desc">
         Một vài dấu mốc trên hành trình của tôi.
     </div>
 
-    <div id="timelineList" class="timeline"></div>
+    <div
+        id="timelineList"
+        class="timeline">
+    </div>
 
 </section>
 
 
-<!-- WRITE -->
+<!-- =========================
+     VIẾT
+========================= -->
 
 <section id="write" class="section">
 
-    <h2 class="section-title">Viết một điều để lưu lại</h2>
+    <h2 class="section-title">
+        Viết một điều để lưu lại
+    </h2>
 
     <div class="section-desc">
         Không cần viết hay. Chỉ cần thật.
     </div>
+
 
     <div class="form-row">
 
@@ -714,10 +822,10 @@ textarea{
 
         <input
             type="date"
-            id="entryDate"
-        >
+            id="entryDate">
 
     </div>
+
 
     <div class="form-row">
 
@@ -726,10 +834,10 @@ textarea{
         <input
             type="text"
             id="entryTitle"
-            placeholder="Hôm nay..."
-        >
+            placeholder="Hôm nay...">
 
     </div>
+
 
     <div class="form-row">
 
@@ -737,50 +845,92 @@ textarea{
 
         <select id="entryMood">
 
-            <option value="Bình yên">🌿 Bình yên</option>
-            <option value="Vui">☀️ Vui</option>
-            <option value="Hạnh phúc">♡ Hạnh phúc</option>
-            <option value="Nhớ">🌙 Nhớ</option>
-            <option value="Buồn">☁️ Buồn</option>
-            <option value="Suy nghĩ">🍂 Suy nghĩ</option>
+            <option value="Bình yên">
+                🌿 Bình yên
+            </option>
+
+            <option value="Vui">
+                ☀️ Vui
+            </option>
+
+            <option value="Hạnh phúc">
+                ♡ Hạnh phúc
+            </option>
+
+            <option value="Nhớ">
+                🌙 Nhớ
+            </option>
+
+            <option value="Buồn">
+                ☁️ Buồn
+            </option>
+
+            <option value="Suy nghĩ">
+                🍂 Suy nghĩ
+            </option>
 
         </select>
 
     </div>
 
+
     <div class="form-row">
 
-        <label>Điều muốn lưu lại</label>
+        <label>
+            Điều muốn lưu lại
+        </label>
 
         <textarea
             id="entryText"
             placeholder="Hôm nay đã xảy ra chuyện gì?
 Tôi cảm thấy thế nào?
-Có điều gì tôi muốn nhớ?"
-        ></textarea>
+Có điều gì tôi muốn nhớ?">
+        </textarea>
 
     </div>
 
+
     <div class="form-row">
 
-        <label>Ảnh kỷ niệm — không bắt buộc</label>
+        <label>
+            Ảnh kỷ niệm — không bắt buộc
+        </label>
 
         <input
             type="file"
             id="entryImage"
-            accept="image/*"
-        >
+            accept="image/*">
 
     </div>
 
+
     <div class="form-actions">
 
-        <button class="primary" onclick="saveEntry()">
+        <button
+            class="primary"
+            id="saveButton"
+            onclick="saveEntry()">
             Lưu lại ♡
         </button>
 
-        <button class="secondary" onclick="clearForm()">
-            Xóa
+        <button
+            class="secondary"
+            id="cancelEditButton"
+            onclick="clearForm()"
+            style="display:none">
+            Hủy sửa
+        </button>
+
+        <button
+            class="secondary"
+            onclick="clearForm()">
+            Xóa nội dung
+        </button>
+
+        <button
+            class="secondary"
+            onclick="exportDiary()">
+            Sao lưu
         </button>
 
     </div>
@@ -789,6 +939,7 @@ Có điều gì tôi muốn nhớ?"
 
 
 </main>
+
 </div>
 
 
@@ -803,12 +954,20 @@ Có điều gì tôi muốn nhớ?"
 
 <script>
 
+/* =========================
+   DỮ LIỆU
+========================= */
+
 let entries =
-    JSON.parse(localStorage.getItem("luuLaiDiary") || "[]");
+    JSON.parse(
+        localStorage.getItem("luuLaiDiary") || "[]"
+    );
+
+let editingId = null;
 
 
 /* =========================
-   DATE
+   NGÀY
 ========================= */
 
 function today(){
@@ -819,11 +978,13 @@ function today(){
 
 }
 
+
 function formatDate(date){
 
     if(!date) return "";
 
-    const d = new Date(date + "T00:00:00");
+    const d =
+        new Date(date + "T00:00:00");
 
     return String(d.getDate()).padStart(2,"0")
         + " · "
@@ -835,27 +996,54 @@ function formatDate(date){
 
 
 /* =========================
-   NAVIGATION
+   ĐỔI TRANG
 ========================= */
 
 function showSection(id,btn){
 
-    document.querySelectorAll(".section")
-        .forEach(s => s.classList.remove("active"));
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
 
-    document.getElementById(id)
-        .classList.add("active");
+            section.classList.remove("active");
 
-    document.querySelectorAll(".nav button")
-        .forEach(b => b.classList.remove("active"));
+        });
 
-    if(btn) btn.classList.add("active");
 
-    if(id === "diary") renderDiary();
+    const target =
+        document.getElementById(id);
 
-    if(id === "album") renderAlbum();
+    if(target){
+        target.classList.add("active");
+    }
 
-    if(id === "timeline") renderTimeline();
+
+    document
+        .querySelectorAll(".nav button")
+        .forEach(button => {
+
+            button.classList.remove("active");
+
+        });
+
+
+    if(btn){
+        btn.classList.add("active");
+    }
+
+
+    if(id === "diary"){
+        renderDiary();
+    }
+
+    if(id === "album"){
+        renderAlbum();
+    }
+
+    if(id === "timeline"){
+        renderTimeline();
+    }
+
 
     window.scrollTo({
         top:0,
@@ -866,7 +1054,7 @@ function showSection(id,btn){
 
 
 /* =========================
-   SAVE
+   LƯU / CẬP NHẬT
 ========================= */
 
 function saveEntry(){
@@ -875,30 +1063,109 @@ function saveEntry(){
         document.getElementById("entryDate").value;
 
     const title =
-        document.getElementById("entryTitle").value.trim();
+        document
+        .getElementById("entryTitle")
+        .value
+        .trim();
 
     const mood =
         document.getElementById("entryMood").value;
 
     const text =
-        document.getElementById("entryText").value.trim();
+        document
+        .getElementById("entryText")
+        .value
+        .trim();
 
     const file =
-        document.getElementById("entryImage").files[0];
+        document
+        .getElementById("entryImage")
+        .files[0];
 
 
     if(!date || !title || !text){
 
-        alert("Bạn hãy nhập ngày, tiêu đề và nội dung nhé.");
+        alert(
+            "Bạn hãy nhập ngày, tiêu đề và nội dung nhé."
+        );
 
         return;
 
     }
 
 
+    /* ===== ĐANG SỬA ===== */
+
+    if(editingId !== null){
+
+        const index =
+            entries.findIndex(
+                e => e.id === editingId
+            );
+
+
+        if(index === -1){
+
+            editingId = null;
+
+            saveEntry();
+
+            return;
+
+        }
+
+
+        const oldImage =
+            entries[index].image || "";
+
+
+        if(file){
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload = function(e){
+
+                updateEntry(
+                    index,
+                    date,
+                    title,
+                    mood,
+                    text,
+                    e.target.result
+                );
+
+            };
+
+
+            reader.readAsDataURL(file);
+
+        }else{
+
+            updateEntry(
+                index,
+                date,
+                title,
+                mood,
+                text,
+                oldImage
+            );
+
+        }
+
+        return;
+
+    }
+
+
+    /* ===== BÀI MỚI ===== */
+
     if(file){
 
-        const reader = new FileReader();
+        const reader =
+            new FileReader();
+
 
         reader.onload = function(e){
 
@@ -911,6 +1178,7 @@ function saveEntry(){
             );
 
         };
+
 
         reader.readAsDataURL(file);
 
@@ -929,7 +1197,17 @@ function saveEntry(){
 }
 
 
-function addEntry(date,title,mood,text,image){
+/* =========================
+   THÊM BÀI
+========================= */
+
+function addEntry(
+    date,
+    title,
+    mood,
+    text,
+    image
+){
 
     entries.unshift({
 
@@ -958,7 +1236,9 @@ function addEntry(date,title,mood,text,image){
 
     updateStats();
 
+
     alert("Đã lưu lại ♡");
+
 
     showSection(
         "diary",
@@ -969,7 +1249,61 @@ function addEntry(date,title,mood,text,image){
 
 
 /* =========================
-   DIARY
+   CẬP NHẬT BÀI
+========================= */
+
+function updateEntry(
+    index,
+    date,
+    title,
+    mood,
+    text,
+    image
+){
+
+    entries[index] = {
+
+        ...entries[index],
+
+        date:date,
+
+        title:title,
+
+        mood:mood,
+
+        text:text,
+
+        image:image
+
+    };
+
+
+    localStorage.setItem(
+        "luuLaiDiary",
+        JSON.stringify(entries)
+    );
+
+
+    editingId = null;
+
+    clearForm();
+
+    updateStats();
+
+
+    alert("Đã cập nhật kỷ niệm ♡");
+
+
+    showSection(
+        "diary",
+        document.querySelectorAll(".nav button")[1]
+    );
+
+}
+
+
+/* =========================
+   HIỂN THỊ NHẬT KÝ
 ========================= */
 
 function renderDiary(){
@@ -977,27 +1311,54 @@ function renderDiary(){
     const box =
         document.getElementById("diaryList");
 
-    const search =
-        (document.getElementById("searchInput")?.value || "")
-        .toLowerCase();
 
-    let list =
+    const search =
+        (
+            document
+            .getElementById("searchInput")
+            ?.value || ""
+        )
+        .toLowerCase()
+        .trim();
+
+
+    const list =
         entries.filter(e =>
-            e.title.toLowerCase().includes(search) ||
-            e.text.toLowerCase().includes(search) ||
-            e.mood.toLowerCase().includes(search)
+
+            (e.title || "")
+            .toLowerCase()
+            .includes(search)
+
+            ||
+
+            (e.text || "")
+            .toLowerCase()
+            .includes(search)
+
+            ||
+
+            (e.mood || "")
+            .toLowerCase()
+            .includes(search)
+
         );
 
 
     if(list.length === 0){
 
         box.innerHTML = `
+
             <div class="album-empty">
+
                 Chưa có điều gì được lưu lại.
+
                 <br><br>
+
                 Có lẽ hôm nay là một ngày đẹp
                 để bắt đầu.
+
             </div>
+
         `;
 
         return;
@@ -1005,48 +1366,69 @@ function renderDiary(){
     }
 
 
-    box.innerHTML = list.map(e => `
+    box.innerHTML =
 
-        <article class="diary-card">
+        list.map(e => `
 
-            <div class="card-date">
-                ${formatDate(e.date)}
-            </div>
+            <article class="diary-card">
 
-            <h3>
-                ${escapeHTML(e.title)}
-            </h3>
+                <div class="card-date">
+                    ${formatDate(e.date)}
+                </div>
 
-            <div class="card-mood">
-                ${escapeHTML(e.mood)}
-            </div>
 
-            <div class="card-text">
-                ${escapeHTML(e.text)}
-            </div>
+                <h3>
+                    ${escapeHTML(e.title)}
+                </h3>
 
-            ${
-                e.image
-                ?
-                `<img class="card-photo"
-                      src="${e.image}">`
-                :
-                ""
-            }
 
-            <div class="card-actions">
+                <div class="card-mood">
+                    ${escapeHTML(e.mood)}
+                </div>
 
-                <button
-                    class="text-btn"
-                    onclick="deleteEntry(${e.id})">
-                    Xóa
-                </button>
 
-            </div>
+                <div class="card-text">
+                    ${escapeHTML(e.text)}
+                </div>
 
-        </article>
 
-    `).join("");
+                ${
+                    e.image
+
+                    ?
+
+                    `<img
+                        class="card-photo"
+                        src="${e.image}"
+                        alt="${escapeHTML(e.title)}">`
+
+                    :
+
+                    ""
+                }
+
+
+                <div class="card-actions">
+
+                    <button
+                        class="text-btn"
+                        onclick="editEntry(${e.id})">
+                        Sửa
+                    </button>
+
+
+                    <button
+                        class="text-btn"
+                        onclick="deleteEntry(${e.id})">
+                        Xóa
+                    </button>
+
+                </div>
+
+            </article>
+
+        `)
+        .join("");
 
 }
 
@@ -1060,6 +1442,7 @@ function renderAlbum(){
     const box =
         document.getElementById("albumGrid");
 
+
     const photos =
         entries.filter(e => e.image);
 
@@ -1067,8 +1450,10 @@ function renderAlbum(){
     if(photos.length === 0){
 
         box.innerHTML = `
-            <div class="album-empty"
-                 style="grid-column:1/-1">
+
+            <div
+                class="album-empty"
+                style="grid-column:1/-1">
 
                 Chưa có ảnh nào.
 
@@ -1078,6 +1463,7 @@ function renderAlbum(){
                 và thêm một bức ảnh.
 
             </div>
+
         `;
 
         return;
@@ -1086,22 +1472,27 @@ function renderAlbum(){
 
 
     box.innerHTML =
+
         photos.map(e => `
 
-            <div class="album-item"
-                 title="${escapeHTML(e.title)}">
+            <div
+                class="album-item"
+                title="${escapeHTML(e.title)}">
 
-                <img src="${e.image}">
+                <img
+                    src="${e.image}"
+                    alt="${escapeHTML(e.title)}">
 
             </div>
 
-        `).join("");
+        `)
+        .join("");
 
 }
 
 
 /* =========================
-   TIMELINE
+   DÒNG THỜI GIAN
 ========================= */
 
 function renderTimeline(){
@@ -1113,9 +1504,11 @@ function renderTimeline(){
     if(entries.length === 0){
 
         box.innerHTML = `
+
             <p style="color:#988e84">
                 Chưa có dấu mốc nào.
             </p>
+
         `;
 
         return;
@@ -1125,11 +1518,13 @@ function renderTimeline(){
 
     const sorted =
         [...entries].sort(
-            (a,b) => a.date.localeCompare(b.date)
+            (a,b) =>
+                a.date.localeCompare(b.date)
         );
 
 
     box.innerHTML =
+
         sorted.map(e => `
 
             <div class="timeline-item">
@@ -1138,29 +1533,104 @@ function renderTimeline(){
                     ${formatDate(e.date)}
                 </div>
 
+
                 <h3>
                     ${escapeHTML(e.title)}
                 </h3>
 
+
                 <div class="card-text">
+
                     ${escapeHTML(e.text).substring(0,180)}
-                    ${e.text.length > 180 ? "..." : ""}
+
+                    ${
+                        e.text.length > 180
+                        ? "..."
+                        : ""
+                    }
+
                 </div>
 
             </div>
 
-        `).join("");
+        `)
+        .join("");
 
 }
 
 
 /* =========================
-   DELETE
+   SỬA BÀI
+========================= */
+
+function editEntry(id){
+
+    const entry =
+        entries.find(e => e.id === id);
+
+
+    if(!entry){
+        return;
+    }
+
+
+    editingId = id;
+
+
+    document
+        .getElementById("entryDate")
+        .value = entry.date;
+
+
+    document
+        .getElementById("entryTitle")
+        .value = entry.title;
+
+
+    document
+        .getElementById("entryMood")
+        .value = entry.mood;
+
+
+    document
+        .getElementById("entryText")
+        .value = entry.text;
+
+
+    document
+        .getElementById("entryImage")
+        .value = "";
+
+
+    document
+        .getElementById("saveButton")
+        .textContent = "Cập nhật ♡";
+
+
+    document
+        .getElementById("cancelEditButton")
+        .style.display = "inline-block";
+
+
+    showSection(
+        "write",
+        document.querySelectorAll(".nav button")[4]
+    );
+
+}
+
+
+/* =========================
+   XÓA BÀI
 ========================= */
 
 function deleteEntry(id){
 
-    if(!confirm("Bạn có chắc muốn xóa kỷ niệm này không?")){
+    if(
+        !confirm(
+            "Bạn có chắc muốn xóa kỷ niệm này không?"
+        )
+    ){
 
         return;
 
@@ -1168,7 +1638,9 @@ function deleteEntry(id){
 
 
     entries =
-        entries.filter(e => e.id !== id);
+        entries.filter(
+            e => e.id !== id
+        );
 
 
     localStorage.setItem(
@@ -1185,42 +1657,76 @@ function deleteEntry(id){
 
 
 /* =========================
-   FORM
+   XÓA FORM
 ========================= */
 
 function clearForm(){
 
-    document.getElementById("entryDate").value = today();
+    editingId = null;
 
-    document.getElementById("entryTitle").value = "";
 
-    document.getElementById("entryMood").value = "Bình yên";
+    document
+        .getElementById("entryDate")
+        .value = today();
 
-    document.getElementById("entryText").value = "";
 
-    document.getElementById("entryImage").value = "";
+    document
+        .getElementById("entryTitle")
+        .value = "";
+
+
+    document
+        .getElementById("entryMood")
+        .value = "Bình yên";
+
+
+    document
+        .getElementById("entryText")
+        .value = "";
+
+
+    document
+        .getElementById("entryImage")
+        .value = "";
+
+
+    document
+        .getElementById("saveButton")
+        .textContent = "Lưu lại ♡";
+
+
+    document
+        .getElementById("cancelEditButton")
+        .style.display = "none";
 
 }
 
 
 /* =========================
-   STATS
+   THỐNG KÊ
 ========================= */
 
 function updateStats(){
 
-    document.getElementById("countEntries")
-        .textContent = entries.length;
-
-    document.getElementById("countPhotos")
+    document
+        .getElementById("countEntries")
         .textContent =
-        entries.filter(e => e.image).length;
+        entries.length;
+
+
+    document
+        .getElementById("countPhotos")
+        .textContent =
+
+        entries.filter(
+            e => e.image
+        ).length;
 
 }
 
 
 /* =========================
-   SECURITY
+   CHỐNG HTML
 ========================= */
 
 function escapeHTML(text){
@@ -1228,7 +1734,10 @@ function escapeHTML(text){
     const div =
         document.createElement("div");
 
-    div.textContent = text;
+
+    div.textContent =
+        text || "";
+
 
     return div.innerHTML;
 
@@ -1236,32 +1745,44 @@ function escapeHTML(text){
 
 
 /* =========================
-   EXPORT BACKUP
+   SAO LƯU
 ========================= */
 
 function exportDiary(){
 
     const data =
-        JSON.stringify(entries,null,2);
+        JSON.stringify(
+            entries,
+            null,
+            2
+        );
+
 
     const blob =
         new Blob(
             [data],
-            {type:"application/json"}
+            {
+                type:"application/json"
+            }
         );
+
 
     const url =
         URL.createObjectURL(blob);
 
+
     const a =
         document.createElement("a");
+
 
     a.href = url;
 
     a.download =
         "luu-lai-backup.json";
 
+
     a.click();
+
 
     URL.revokeObjectURL(url);
 
@@ -1269,17 +1790,26 @@ function exportDiary(){
 
 
 /* =========================
-   START
+   KHỞI ĐỘNG
 ========================= */
 
-document.getElementById("todayText")
-    .textContent = formatDate(today());
+document
+    .getElementById("todayText")
+    .textContent =
+    formatDate(today());
 
-document.getElementById("currentYear")
-    .textContent = new Date().getFullYear();
 
-document.getElementById("entryDate")
-    .value = today();
+document
+    .getElementById("currentYear")
+    .textContent =
+    new Date().getFullYear();
+
+
+document
+    .getElementById("entryDate")
+    .value =
+    today();
+
 
 updateStats();
 
