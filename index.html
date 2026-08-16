@@ -3,675 +3,615 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LƯU LẠI — Nhật ký của tôi</title>
 
-<title>LƯU LẠI — Nhật ký</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
-
 :root{
-    --bg:#d9d1c6;
-    --paper:#fffaf1;
-    --paper2:#f8f0e5;
-    --ink:#51483f;
-    --muted:#918579;
-    --line:#ddd0c0;
-    --tape:#d8c5a5;
+ --bg:#ddd6cc;
+ --paper:#fbf6ed;
+ --paper2:#fffaf2;
+ --ink:#51483f;
+ --muted:#91867a;
+ --line:#ded3c5;
+ --tape:#d8c6a9;
+ --shadow:rgba(55,45,35,.15)
 }
 
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
-    margin:0;
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,.5),
-            transparent 30%
-        ),
-        var(--bg);
-    color:var(--ink);
-    font-family:"Noto Serif",Georgia,serif;
+ margin:0;
+ background:
+ radial-gradient(circle at 20% 20%,rgba(255,255,255,.45),transparent 30%),
+ var(--bg);
+ color:var(--ink);
+ font-family:"Noto Serif",Georgia,serif
 }
 
-button,
-input,
-textarea,
-select{
-    font-family:inherit;
+button,input,textarea,select{
+ font-family:inherit
 }
 
 button{
-    cursor:pointer;
+ cursor:pointer
 }
-
-/* =========================
-   KHUNG
-========================= */
 
 .wrapper{
-    width:min(1180px,94%);
-    margin:35px auto 60px;
-    background:var(--paper);
-    box-shadow:0 18px 45px rgba(55,45,35,.16);
+ width:min(1180px,94%);
+ margin:35px auto 60px;
+ background:var(--paper2);
+ box-shadow:0 18px 45px rgba(55,45,35,.14)
 }
 
-/* =========================
-   ẢNH BÌA
-========================= */
-
 .hero{
-    min-height:390px;
-    position:relative;
-    display:flex;
-    align-items:flex-end;
-    padding:55px;
-    overflow:hidden;
+ min-height:300px;
+ position:relative;
+ display:flex;
+ align-items:flex-end;
+ padding:55px;
+ overflow:hidden;
+ background:linear-gradient(135deg,#eee6da,#f8f2e9)
+}
 
-    background-image:
-        linear-gradient(
-            rgba(30,25,20,.20),
-            rgba(30,25,20,.38)
-        ),
-        url("2db40577-f007-4e27-acf4-66670ee5cdc2.png");
+.hero:before,
+.hero:after{
+ content:"";
+ position:absolute;
+ background:#e1d7c9;
+ opacity:.45
+}
 
-    background-size:cover;
-    background-position:center;
+.hero:before{
+ width:380px;
+ height:260px;
+ right:-80px;
+ top:-80px;
+ transform:rotate(12deg)
+}
+
+.hero:after{
+ width:260px;
+ height:180px;
+ left:-90px;
+ bottom:-100px;
+ transform:rotate(-15deg)
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    color:#fffaf4;
-    text-shadow:0 2px 12px rgba(0,0,0,.35);
+ position:relative;
+ z-index:2
 }
 
 .logo{
-    margin:0;
-    font-family:"Cormorant Garamond",serif;
-    font-size:68px;
-    font-weight:500;
-    letter-spacing:9px;
+ margin:0;
+ font-family:"Cormorant Garamond",serif;
+ font-size:58px;
+ font-weight:500;
+ letter-spacing:8px
 }
 
 .subtitle{
-    margin-top:5px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:22px;
-    font-style:italic;
+ margin-top:8px;
+ font-family:"Cormorant Garamond",serif;
+ font-size:20px;
+ font-style:italic;
+ color:#887b6e
 }
 
 .small-note{
-    margin-top:17px;
-    font-size:13px;
+ margin-top:20px;
+ font:13px "Be Vietnam Pro",sans-serif;
+ color:#9d9083
 }
 
-/* =========================
-   MENU
-========================= */
-
 .nav{
-    display:flex;
-    justify-content:center;
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    background:#fbf6ed;
-    position:sticky;
-    top:0;
-    z-index:50;
+ display:flex;
+ justify-content:center;
+ border-top:1px solid var(--line);
+ border-bottom:1px solid var(--line);
+ background:#fbf6ed;
+ position:sticky;
+ top:0;
+ z-index:50
 }
 
 .nav button{
-    border:0;
-    background:transparent;
-    padding:16px 23px;
-    color:#776b60;
-    font-size:13px;
+ border:0;
+ background:transparent;
+ padding:16px 23px;
+ color:#776b60;
+ font:13px "Be Vietnam Pro",sans-serif
 }
 
 .nav button:hover,
 .nav button.active{
-    background:#eee6db;
-    color:#443c35;
+ background:#eee6db;
+ color:#443c35
 }
 
-/* =========================
-   LAYOUT
-========================= */
-
 .layout{
-    display:grid;
-    grid-template-columns:235px 1fr;
+ display:grid;
+ grid-template-columns:245px 1fr
 }
 
 .sidebar{
-    padding:38px 25px;
-    border-right:1px solid var(--line);
-    background:#f7f0e6;
+ padding:38px 25px;
+ border-right:1px solid var(--line);
+ background:#f7f0e6
 }
 
 .profile{
-    text-align:center;
+ text-align:center
 }
 
 .avatar{
-    width:92px;
-    height:92px;
-    margin:0 auto 18px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#dfd3c3;
-    color:#837464;
-    font-size:34px;
+ width:95px;
+ height:95px;
+ margin:0 auto 20px;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#e0d4c4;
+ color:#827364;
+ font-size:34px
 }
 
 .profile h3{
-    margin:8px 0 12px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:21px;
+ margin:8px 0 12px;
+ font:20px "Cormorant Garamond",serif
 }
 
 .profile p{
-    margin:0;
-    color:#8c8075;
-    font-size:13px;
-    line-height:1.8;
+ margin:0;
+ color:#8c8075;
+ font-size:13px;
+ line-height:1.8
 }
 
 .side-line{
-    height:1px;
-    background:var(--line);
-    margin:30px 0;
+ height:1px;
+ background:var(--line);
+ margin:30px 0
 }
 
 .side-info{
-    font-size:13px;
-    line-height:2;
-    color:#81756a;
+ font-size:13px;
+ line-height:2;
+ color:#81756a
 }
 
-/* =========================
-   CONTENT
-========================= */
-
 .content{
-    padding:50px 55px 75px;
-    min-height:700px;
+ padding:50px 55px 75px;
+ min-height:700px
 }
 
 .section{
-    display:none;
+ display:none
 }
 
 .section.active{
-    display:block;
+ display:block
 }
 
 .section-title{
-    margin:0 0 8px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:36px;
-    font-weight:500;
+ margin:0 0 8px;
+ font:500 34px "Cormorant Garamond",serif
 }
 
 .section-desc{
-    margin-bottom:30px;
-    color:var(--muted);
-    font-size:14px;
+ margin-bottom:30px;
+ color:var(--muted);
+ font-size:14px
 }
 
-/* =========================
-   PAPER
-========================= */
+.welcome-date,
+.card-date{
+ font:11px "Be Vietnam Pro",sans-serif;
+ letter-spacing:3px;
+ color:#a18f7e
+}
 
+.welcome h2{
+ margin:16px 0 25px;
+ font:500 42px/1.25 "Cormorant Garamond",serif
+}
+
+.divider{
+ width:55px;
+ height:1px;
+ margin:20px 0 35px;
+ background:#cbbba8
+}
+
+.welcome-text{
+ max-width:720px;
+ color:#6d645c;
+ line-height:2;
+ font-size:16px
+}
+
+.quote{
+ max-width:760px;
+ margin:42px 0;
+ padding:25px 30px;
+ border-left:3px solid #c9b8a4;
+ background:#f2eadf;
+ color:#827568;
+ font-style:italic;
+ line-height:1.8
+}
+
+/* GIẤY XÉ */
 .paper,
 .diary-card{
-    position:relative;
-    background:var(--paper);
-    box-shadow:4px 7px 18px rgba(55,45,35,.15);
+ position:relative;
+ background:var(--paper2);
+ box-shadow:4px 7px 18px var(--shadow)
 }
 
 .paper{
-    margin:30px 8px 55px;
-    padding:45px 42px 50px;
-    transform:rotate(-.3deg);
+ margin:30px 8px 55px;
+ padding:45px 42px 50px;
+ transform:rotate(-.35deg)
 }
 
 .paper:before,
 .paper:after,
 .diary-card:before,
 .diary-card:after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    height:10px;
-    background:var(--paper);
+ content:"";
+ position:absolute;
+ left:0;
+ right:0;
+ height:10px;
+ background:var(--paper2)
 }
 
 .paper:before,
 .diary-card:before{
-    top:-6px;
-    clip-path:polygon(
-        0 45%,4% 10%,8% 48%,12% 12%,16% 43%,
-        20% 18%,24% 52%,28% 10%,32% 45%,36% 15%,
-        40% 48%,44% 12%,48% 44%,52% 8%,56% 48%,
-        60% 15%,64% 43%,68% 10%,72% 48%,76% 15%,
-        80% 45%,84% 10%,88% 48%,92% 12%,96% 44%,
-        100% 15%,100% 100%,0 100%
-    );
+ top:-6px;
+ clip-path:polygon(
+ 0 45%,4% 10%,8% 48%,12% 12%,16% 43%,
+ 20% 18%,24% 52%,28% 10%,32% 45%,36% 15%,
+ 40% 48%,44% 12%,48% 44%,52% 8%,56% 48%,
+ 60% 15%,64% 43%,68% 10%,72% 48%,76% 15%,
+ 80% 45%,84% 10%,88% 48%,92% 12%,96% 44%,
+ 100% 15%,100% 100%,0 100%
+ )
 }
 
 .paper:after,
 .diary-card:after{
-    bottom:-6px;
-    clip-path:polygon(
-        0 0,4% 35%,8% 5%,12% 42%,16% 10%,20% 38%,
-        24% 4%,28% 44%,32% 12%,36% 45%,40% 7%,
-        44% 40%,48% 4%,52% 38%,56% 10%,60% 44%,
-        64% 7%,68% 40%,72% 12%,76% 45%,80% 7%,
-        84% 40%,88% 10%,92% 43%,96% 8%,100% 38%,
-        100% 100%,0 100%
-    );
+ bottom:-6px;
+ clip-path:polygon(
+ 0 0,4% 35%,8% 5%,12% 42%,16% 10%,20% 38%,
+ 24% 4%,28% 44%,32% 12%,36% 45%,40% 7%,44% 40%,
+ 48% 4%,52% 38%,56% 10%,60% 44%,64% 7%,68% 40%,
+ 72% 12%,76% 45%,80% 7%,84% 40%,88% 10%,92% 43%,
+ 96% 8%,100% 38%,100% 100%,0 100%
+ )
 }
-
-/* =========================
-   BĂNG DÍNH
-========================= */
 
 .tape{
-    position:absolute;
-    width:105px;
-    height:31px;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(203,183,151,.75),
-            rgba(231,215,187,.85),
-            rgba(197,177,146,.72)
-        );
-    opacity:.86;
-    z-index:5;
+ position:absolute;
+ width:105px;
+ height:31px;
+ background:linear-gradient(
+  90deg,
+  rgba(203,183,151,.75),
+  rgba(231,215,187,.82),
+  rgba(197,177,146,.72)
+ );
+ opacity:.85;
+ box-shadow:0 2px 4px rgba(60,50,40,.08);
+ z-index:5
 }
 
-.tape-left{
-    left:-20px;
-    top:-14px;
-    transform:rotate(-8deg);
+.top-left{
+ left:-20px;
+ top:-14px;
+ transform:rotate(-8deg)
 }
 
-.tape-right{
-    right:-18px;
-    top:-12px;
-    transform:rotate(9deg);
-}
-
-/* =========================
-   HOME
-========================= */
-
-.welcome h2{
-    margin:16px 0 25px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:42px;
-    line-height:1.25;
-    font-weight:500;
-}
-
-.divider{
-    width:55px;
-    height:1px;
-    margin:20px 0 35px;
-    background:#cbbba8;
-}
-
-.welcome-text{
-    max-width:720px;
-    color:#6d645c;
-    line-height:2;
-    font-size:16px;
-}
-
-.quote{
-    max-width:760px;
-    margin:42px 0;
-    padding:25px 30px;
-    border-left:3px solid #c9b8a4;
-    background:#f2eadf;
-    color:#827568;
-    font-style:italic;
-    line-height:1.8;
-}
-
-/* =========================
-   DIARY
-========================= */
-
-.search{
-    width:100%;
-    padding:13px 14px;
-    margin-bottom:35px;
-    border:1px solid #d9cec1;
-    outline:none;
-    background:#fffdf8;
-    color:#574e46;
+.top-right{
+ right:-18px;
+ top:-12px;
+ transform:rotate(9deg)
 }
 
 .diary-card{
-    margin:0 6px 45px;
-    padding:42px 40px 45px;
-    transform:rotate(-.4deg);
+ margin:0 6px 45px;
+ padding:42px 40px 45px;
+ transform:rotate(-.45deg)
 }
 
 .diary-card:nth-child(even){
-    transform:rotate(.45deg);
+ transform:rotate(.55deg)
 }
 
 .diary-card:nth-child(3n){
-    transform:rotate(-.15deg);
+ transform:rotate(-.2deg)
 }
 
 .diary-card .tape{
-    right:25px;
-    top:-12px;
-    transform:rotate(6deg);
+ top:-12px;
+ right:25px;
+ transform:rotate(6deg)
 }
 
 .card-date{
-    margin-bottom:12px;
-    color:#a18f7e;
-    font-size:11px;
-    letter-spacing:3px;
+ margin-bottom:12px
 }
 
 .diary-card h3{
-    margin:8px 0 15px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:30px;
-    font-weight:500;
+ margin:8px 0 15px;
+ font:500 29px "Cormorant Garamond",serif;
+ color:#50473f
 }
 
 .card-mood{
-    display:inline-block;
-    margin-bottom:17px;
-    padding:4px 11px;
-    border:1px solid #d9cbbb;
-    color:#8a7b6b;
-    font-size:11px;
+ display:inline-block;
+ margin-bottom:17px;
+ padding:4px 11px;
+ border:1px solid #d9cbbb;
+ color:#8a7b6b;
+ font:11px "Be Vietnam Pro",sans-serif
 }
 
 .card-text{
-    color:#686057;
-    line-height:1.95;
-    white-space:pre-line;
-    font-size:15px;
+ color:#686057;
+ line-height:1.95;
+ white-space:pre-line;
+ font-size:15px
 }
 
 .card-photo{
-    display:block;
-    width:100%;
-    max-height:450px;
-    margin-top:25px;
-    object-fit:cover;
+ display:block;
+ width:100%;
+ max-height:450px;
+ margin-top:25px;
+ object-fit:cover;
+ box-shadow:0 4px 14px rgba(40,30,20,.12)
 }
 
-/* =========================
-   NÚT SỬA / XÓA
-========================= */
-
 .card-actions{
-    display:flex;
-    gap:10px;
-    margin-top:25px;
-    position:relative;
-    z-index:20;
+ margin-top:25px;
+ display:flex;
+ gap:10px
 }
 
 .text-btn{
-    border:1px solid #d4c6b6;
-    background:#f1e9df;
-    color:#6e6257;
-    padding:9px 16px;
-    font-size:12px;
+ border:1px solid #d9cbbb;
+ background:rgba(255,255,255,.35);
+ color:#786b5f;
+ padding:7px 13px;
+ font:11px "Be Vietnam Pro",sans-serif
 }
 
 .text-btn:hover{
-    background:#dfd3c4;
+ background:#eee6db;
+ color:#443c35
 }
 
-.delete-btn:hover{
-    background:#e7d3ca;
-    color:#794f45;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.form-row{
-    margin-bottom:20px;
-}
-
-.form-row label{
-    display:block;
-    margin-bottom:8px;
-    color:#74695e;
-    font-size:13px;
-}
-
+.search,
 input,
 textarea,
 select{
-    width:100%;
-    padding:13px 14px;
-    border:1px solid #d9cec1;
-    outline:none;
-    background:#fffdf8;
-    color:#574e46;
-    font-size:14px;
+ width:100%;
+ padding:13px 14px;
+ border:1px solid #d9cec1;
+ outline:none;
+ background:#fffdf8;
+ color:#574e46;
+ font-size:14px
+}
+
+.search{
+ margin-bottom:35px
+}
+
+.form-row{
+ margin-bottom:20px
+}
+
+.form-row label{
+ display:block;
+ margin-bottom:8px;
+ color:#74695e;
+ font-size:13px
 }
 
 textarea{
-    min-height:230px;
-    resize:vertical;
-    line-height:1.8;
+ min-height:230px;
+ resize:vertical;
+ line-height:1.8
 }
 
 .form-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:25px;
+ display:flex;
+ gap:12px;
+ margin-top:25px
 }
 
 .primary,
 .secondary{
-    padding:11px 20px;
-    border:1px solid #d4c7b8;
-    font-size:13px;
+ padding:11px 20px;
+ border:1px solid #d4c7b8;
+ font-size:13px
 }
 
 .primary{
-    background:#665c53;
-    color:#fff;
+ background:#665c53;
+ color:#fff;
+ border-color:#665c53
 }
 
 .secondary{
-    background:#eee6dc;
-    color:#6e6359;
+ background:#eee6dc;
+ color:#6e6359
 }
 
 .edit-note{
-    display:none;
-    margin-bottom:20px;
-    padding:12px 15px;
-    background:#eee5da;
-    color:#75695e;
-    font-size:13px;
+ display:none;
+ margin-bottom:20px;
+ padding:12px 15px;
+ background:#eee5da;
+ color:#75695e;
+ font-size:13px
 }
 
 .edit-note.show{
-    display:block;
+ display:block
 }
 
-/* =========================
-   ALBUM
-========================= */
-
 .album-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:30px
 }
 
 .album-item{
-    position:relative;
-    padding:12px 12px 35px;
-    background:#fffaf2;
-    box-shadow:3px 6px 15px rgba(50,40,30,.15);
-    transform:rotate(-1deg);
+ position:relative;
+ padding:12px 12px 35px;
+ background:#fffaf2;
+ box-shadow:3px 6px 15px rgba(50,40,30,.15);
+ transform:rotate(-1deg)
 }
 
 .album-item:nth-child(even){
-    transform:rotate(1.3deg);
+ transform:rotate(1.3deg)
+}
+
+.album-item:before{
+ content:"";
+ position:absolute;
+ width:75px;
+ height:24px;
+ top:-10px;
+ left:50%;
+ transform:translateX(-50%) rotate(-2deg);
+ background:rgba(218,199,168,.78)
 }
 
 .album-item img{
-    width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
+ width:100%;
+ aspect-ratio:1;
+ object-fit:cover;
+ display:block
 }
 
-/* =========================
-   TIMELINE
-========================= */
-
 .timeline{
-    border-left:1px solid #d5c7b7;
-    margin-left:12px;
-    padding-left:35px;
+ border-left:1px solid #d5c7b7;
+ margin-left:12px;
+ padding-left:35px
 }
 
 .timeline-item{
-    position:relative;
-    margin-bottom:48px;
+ position:relative;
+ margin-bottom:48px
 }
 
 .timeline-item:before{
-    content:"";
-    position:absolute;
-    width:10px;
-    height:10px;
-    left:-41px;
-    top:5px;
-    border-radius:50%;
-    background:#bba991;
-    box-shadow:0 0 0 4px #eee5da;
+ content:"";
+ position:absolute;
+ width:10px;
+ height:10px;
+ left:-41px;
+ top:5px;
+ border-radius:50%;
+ background:#bba991;
+ box-shadow:0 0 0 4px #eee5da
 }
 
 .timeline-year{
-    margin-bottom:8px;
-    color:#9c8b79;
-    font-size:11px;
-    letter-spacing:2px;
+ margin-bottom:8px;
+ color:#9c8b79;
+ font:11px "Be Vietnam Pro",sans-serif;
+ letter-spacing:2px
 }
 
 .timeline-item h3{
-    margin:0 0 12px;
-    font-family:"Cormorant Garamond",serif;
-    font-size:24px;
+ margin:0 0 12px;
+ font:500 24px "Cormorant Garamond",serif
 }
-
-/* =========================
-   EMPTY
-========================= */
 
 .empty{
-    padding:60px 25px;
-    text-align:center;
-    background:#f5ede2;
-    color:#988c80;
-    line-height:1.8;
+ padding:60px 25px;
+ text-align:center;
+ background:#f5ede2;
+ color:#988c80;
+ line-height:1.8
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 .footer{
-    border-top:1px solid var(--line);
-    padding:30px;
-    text-align:center;
-    color:#a2978b;
-    font-size:12px;
+ border-top:1px solid var(--line);
+ padding:30px;
+ text-align:center;
+ color:#a2978b;
+ font-size:12px
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:800px){
+ .wrapper{
+  width:100%;
+  margin:0
+ }
 
-    .wrapper{
-        width:100%;
-        margin:0;
-    }
+ .hero{
+  min-height:250px;
+  padding:35px 25px
+ }
 
-    .hero{
-        min-height:300px;
-        padding:35px 25px;
-    }
+ .logo{
+  font-size:43px
+ }
 
-    .logo{
-        font-size:48px;
-    }
+ .nav{
+  overflow-x:auto;
+  justify-content:flex-start
+ }
 
-    .nav{
-        overflow-x:auto;
-        justify-content:flex-start;
-    }
+ .nav button{
+  white-space:nowrap;
+  padding:15px 17px
+ }
 
-    .nav button{
-        white-space:nowrap;
-        padding:15px 17px;
-    }
+ .layout{
+  grid-template-columns:1fr
+ }
 
-    .layout{
-        grid-template-columns:1fr;
-    }
+ .sidebar{
+  border-right:0;
+  border-bottom:1px solid var(--line);
+  padding:30px 20px
+ }
 
-    .sidebar{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-    }
+ .content{
+  padding:35px 20px 55px
+ }
 
-    .content{
-        padding:35px 20px 55px;
-    }
+ .paper,
+ .diary-card{
+  padding:35px 25px 40px;
+  margin-left:3px;
+  margin-right:3px
+ }
 
-    .paper,
-    .diary-card{
-        padding:35px 25px 40px;
-        margin-left:3px;
-        margin-right:3px;
-    }
+ .album-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:15px
+ }
 
-    .album-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
-    }
-
-    .welcome h2{
-        font-size:32px;
-    }
+ .welcome h2{
+  font-size:32px
+ }
 }
 </style>
 </head>
@@ -681,372 +621,354 @@ textarea{
 <div class="wrapper">
 
 <header class="hero">
-
-    <div class="hero-content">
-
-        <h1 class="logo">LƯU LẠI</h1>
-
-        <div class="subtitle">
-            những ngày tôi đã sống
-        </div>
-
-        <div class="small-note">
-            Một góc nhỏ để cất những điều không muốn quên.
-        </div>
-
-    </div>
-
+<div class="hero-content">
+<h1 class="logo">LƯU LẠI</h1>
+<div class="subtitle">những ngày tôi đã sống</div>
+<div class="small-note">Một góc nhỏ để cất những điều không muốn quên.</div>
+</div>
 </header>
 
-
 <nav class="nav">
-
-    <button class="active"
-        onclick="showSection('home',this)">
-        Trang chủ
-    </button>
-
-    <button
-        onclick="showSection('diary',this)">
-        Nhật ký
-    </button>
-
-    <button
-        onclick="showSection('album',this)">
-        Album
-    </button>
-
-    <button
-        onclick="showSection('timeline',this)">
-        Dòng thời gian
-    </button>
-
-    <button
-        onclick="newEntry()">
-        + Viết
-    </button>
-
+<button class="active" onclick="showSection('home',this)">Trang chủ</button>
+<button onclick="showSection('diary',this)">Nhật ký</button>
+<button onclick="showSection('album',this)">Album</button>
+<button onclick="showSection('timeline',this)">Dòng thời gian</button>
+<button onclick="showSection('write',this);newEntry()">+ Viết</button>
 </nav>
-
 
 <div class="layout">
 
 <aside class="sidebar">
 
-    <div class="profile">
+<div class="profile">
+<div class="avatar">♡</div>
 
-        <div class="avatar">♡</div>
+<h3>một người bình thường</h3>
 
-        <h3>
-            một người bình thường
-        </h3>
+<p>
+Tôi viết ở đây không phải để kể cho ai nghe.<br>
+Chỉ là muốn một ngày nào đó,<br>
+khi nhìn lại, mình vẫn nhớ.
+</p>
+</div>
 
-        <p>
-            Tôi viết ở đây không phải để kể
-            cho ai nghe.
-            <br>
-            Chỉ là muốn một ngày nào đó,
-            <br>
-            khi nhìn lại, mình vẫn nhớ.
-        </p>
+<div id="authBox" style="margin-top:22px;text-align:center">
 
-    </div>
+<button
+class="primary"
+id="loginBtn"
+onclick="loginGoogle()"
+style="width:100%;display:none">
+Đăng nhập Google
+</button>
 
-    <div class="side-line"></div>
+<button
+class="secondary"
+id="logoutBtn"
+onclick="logoutGoogle()"
+style="width:100%;display:none">
+Đăng xuất
+</button>
 
-    <div class="side-info">
+<div
+id="authStatus"
+style="margin-top:10px;font-size:11px;color:#91867a;line-height:1.5">
+</div>
 
-        <div>
-            <strong>Nhật ký:</strong>
-            <span id="countEntries">0</span>
-        </div>
+</div>
 
-        <div>
-            <strong>Kỷ niệm:</strong>
-            <span id="countPhotos">0</span>
-        </div>
+<div class="side-line"></div>
 
-        <div>
-            <strong>Năm:</strong>
-            <span id="currentYear"></span>
-        </div>
+<div class="side-info">
 
-    </div>
+<div>
+<strong>Nhật ký:</strong>
+<span id="countEntries">0</span>
+</div>
 
-    <div class="side-line"></div>
+<div>
+<strong>Kỷ niệm:</strong>
+<span id="countPhotos">0</span>
+</div>
 
-    <div class="side-info">
+<div>
+<strong>Năm:</strong>
+<span id="currentYear"></span>
+</div>
 
-        “Có những điều rất nhỏ,
-        nhưng nhiều năm sau
-        lại trở thành điều mình nhớ nhất.”
+</div>
 
-    </div>
+<div class="side-line"></div>
+
+<div class="side-info">
+“<br>
+Có những điều rất nhỏ,<br>
+nhưng nhiều năm sau<br>
+lại trở thành điều mình nhớ nhất.
+</div>
 
 </aside>
 
-
 <main class="content">
-
 
 <section id="home" class="section active">
 
-    <div class="welcome">
+<div class="welcome">
 
-        <div class="paper">
+<div class="welcome-date" id="todayText"></div>
 
-            <div class="tape tape-left"></div>
+<div class="paper">
 
-            <h2>
-                Hôm nay,
-                <br>
-                tôi muốn lưu lại một chút.
-            </h2>
+<div class="tape top-left"></div>
 
-            <div class="divider"></div>
+<h2>
+Hôm nay,<br>
+tôi muốn lưu lại một chút.
+</h2>
 
-            <div class="welcome-text">
+<div class="divider"></div>
 
-                Có những ngày chẳng có gì đặc biệt.
+<div class="welcome-text">
+Có những ngày chẳng có gì đặc biệt.<br><br>
+Một buổi sáng bình thường.<br>
+Một cốc cà phê.<br>
+Một đoạn đường quen.<br>
+Một người mình thương.<br>
+Một chuyện rất nhỏ.<br><br>
+Nhưng thời gian đi qua, những điều nhỏ bé ấy lại là thứ khiến mình nhớ về một khoảng thời gian đã từng rất đẹp.
+</div>
 
-                <br><br>
+<div class="quote">
+“Không phải để người khác đọc.<br>
+Chỉ là để sau này,<br>
+mình vẫn nhớ mình đã từng là mình.”
+</div>
 
-                Một buổi sáng bình thường.
-                <br>
-                Một cốc cà phê.
-                <br>
-                Một đoạn đường quen.
-                <br>
-                Một người mình thương.
-                <br>
-                Một chuyện rất nhỏ.
-
-                <br><br>
-
-                Nhưng thời gian đi qua,
-                những điều nhỏ bé ấy lại là thứ
-                khiến mình nhớ về một khoảng thời gian
-                đã từng rất đẹp.
-
-            </div>
-
-            <div class="quote">
-
-                “Không phải để người khác đọc.
-                <br>
-                Chỉ là để sau này,
-                <br>
-                mình vẫn nhớ mình đã từng là mình.”
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
+</div>
 
 </section>
-
 
 <section id="diary" class="section">
 
-    <h2 class="section-title">
-        Nhật ký
-    </h2>
+<h2 class="section-title">Nhật ký</h2>
 
-    <div class="section-desc">
-        Những điều tôi muốn giữ lại.
-    </div>
+<div class="section-desc">
+Những điều tôi muốn giữ lại.
+</div>
 
-    <input
-        class="search"
-        id="searchInput"
-        placeholder="Tìm trong những ngày đã viết..."
-        oninput="renderDiary()">
+<input
+class="search"
+id="searchInput"
+placeholder="Tìm trong những ngày đã viết..."
+oninput="renderDiary()">
 
-    <div id="diaryList"></div>
+<div id="diaryList"></div>
 
 </section>
-
 
 <section id="album" class="section">
 
-    <h2 class="section-title">
-        Album
-    </h2>
+<h2 class="section-title">Album</h2>
 
-    <div class="section-desc">
-        Những khoảnh khắc được giữ lại bằng hình ảnh.
-    </div>
+<div class="section-desc">
+Những khoảnh khắc được giữ lại bằng hình ảnh.
+</div>
 
-    <div id="albumGrid" class="album-grid"></div>
+<div id="albumGrid" class="album-grid"></div>
 
 </section>
-
 
 <section id="timeline" class="section">
 
-    <h2 class="section-title">
-        Dòng thời gian
-    </h2>
+<h2 class="section-title">Dòng thời gian</h2>
 
-    <div class="section-desc">
-        Một vài dấu mốc trên hành trình của tôi.
-    </div>
+<div class="section-desc">
+Một vài dấu mốc trên hành trình của tôi.
+</div>
 
-    <div id="timelineList" class="timeline"></div>
+<div id="timelineList" class="timeline"></div>
 
 </section>
 
-
 <section id="write" class="section">
 
-    <h2
-        class="section-title"
-        id="writeTitle">
-        Viết một điều để lưu lại
-    </h2>
+<h2 class="section-title" id="writeTitle">
+Viết một điều để lưu lại
+</h2>
 
-    <div class="section-desc">
-        Không cần viết hay. Chỉ cần thật.
-    </div>
+<div class="section-desc">
+Không cần viết hay. Chỉ cần thật.
+</div>
 
-    <div
-        class="edit-note"
-        id="editNote">
+<div class="edit-note" id="editNote">
+Bạn đang chỉnh sửa một kỷ niệm đã lưu.
+</div>
 
-        Bạn đang chỉnh sửa một kỷ niệm đã lưu.
+<div class="paper">
 
-    </div>
+<div class="tape top-right"></div>
 
+<div class="form-row">
+<label>Ngày</label>
+<input type="date" id="entryDate">
+</div>
 
-    <div class="paper">
+<div class="form-row">
+<label>Tiêu đề</label>
+<input type="text" id="entryTitle" placeholder="Hôm nay...">
+</div>
 
-        <div class="tape tape-right"></div>
+<div class="form-row">
 
+<label>Tâm trạng</label>
 
-        <div class="form-row">
+<select id="entryMood">
 
-            <label>Ngày</label>
+<option value="Bình yên">🌿 Bình yên</option>
+<option value="Vui">☀️ Vui</option>
+<option value="Hạnh phúc">♡ Hạnh phúc</option>
+<option value="Nhớ">🌙 Nhớ</option>
+<option value="Buồn">☁️ Buồn</option>
+<option value="Suy nghĩ">🍂 Suy nghĩ</option>
 
-            <input
-                type="date"
-                id="entryDate">
+</select>
 
-        </div>
+</div>
 
+<div class="form-row">
 
-        <div class="form-row">
+<label>Điều muốn lưu lại</label>
 
-            <label>Tiêu đề</label>
+<textarea
+id="entryText"
+placeholder="Hôm nay đã xảy ra chuyện gì?&#10;Tôi cảm thấy thế nào?&#10;Có điều gì tôi muốn nhớ?"></textarea>
 
-            <input
-                type="text"
-                id="entryTitle"
-                placeholder="Hôm nay...">
+</div>
 
-        </div>
+<div class="form-row">
 
+<label>Ảnh kỷ niệm — không bắt buộc</label>
 
-        <div class="form-row">
+<input
+type="file"
+id="entryImage"
+accept="image/*">
 
-            <label>Tâm trạng</label>
+</div>
 
-            <select id="entryMood">
+<div class="form-actions">
 
-                <option>🌿 Bình yên</option>
-                <option>☀️ Vui</option>
-                <option>♡ Hạnh phúc</option>
-                <option>🌙 Nhớ</option>
-                <option>☁️ Buồn</option>
-                <option>🍂 Suy nghĩ</option>
+<button
+class="primary"
+id="saveButton"
+onclick="saveEntry()">
+Lưu lại ♡
+</button>
 
-            </select>
+<button
+class="secondary"
+onclick="clearForm()">
+Xóa
+</button>
 
-        </div>
+<button
+class="secondary"
+id="cancelEditButton"
+style="display:none"
+onclick="cancelEdit()">
+Hủy sửa
+</button>
 
+</div>
 
-        <div class="form-row">
-
-            <label>
-                Điều muốn lưu lại
-            </label>
-
-            <textarea
-                id="entryText"
-                placeholder="Hôm nay đã xảy ra chuyện gì?
-Tôi cảm thấy thế nào?
-Có điều gì tôi muốn nhớ?"></textarea>
-
-        </div>
-
-
-        <div class="form-row">
-
-            <label>
-                Ảnh kỷ niệm — không bắt buộc
-            </label>
-
-            <input
-                type="file"
-                id="entryImage"
-                accept="image/*">
-
-        </div>
-
-
-        <div class="form-actions">
-
-            <button
-                class="primary"
-                id="saveButton"
-                onclick="saveEntry()">
-
-                Lưu lại ♡
-
-            </button>
-
-            <button
-                class="secondary"
-                onclick="clearForm()">
-
-                Xóa
-
-            </button>
-
-            <button
-                class="secondary"
-                id="cancelEditButton"
-                style="display:none"
-                onclick="cancelEdit()">
-
-                Hủy sửa
-
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 </main>
-
 </div>
 
-
 <footer class="footer">
-    LƯU LẠI · một góc nhỏ của riêng tôi
+LƯU LẠI · một góc nhỏ của riêng tôi
 </footer>
 
 </div>
 
+<script type="module">
 
-<script>
+import {
+ initializeApp
+} from "https://www.gstatic.com/firebasejs/12.7.1/firebase-app.js";
 
-/* =================================================
-   QUAN TRỌNG NHẤT:
-   ĐÂY LÀ KHÓA DỮ LIỆU CŨ CỦA BẠN
-================================================= */
+import {
+ getAuth,
+ GoogleAuthProvider,
+ signInWithPopup,
+ signOut,
+ onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.7.1/firebase-auth.js";
+
+import {
+ getFirestore,
+ collection,
+ getDocs,
+ addDoc,
+ updateDoc,
+ deleteDoc,
+ doc,
+ query,
+ where
+} from "https://www.gstatic.com/firebasejs/12.7.1/firebase-firestore.js";
+
+
+/* ==============================
+   FIREBASE CONFIG
+============================== */
+
+const firebaseConfig = {
+
+ apiKey:
+ "AIzaSyAVfCoNFA2ndSF-bfDsDEmvw9MeeggLSxk",
+
+ authDomain:
+ "luu-lai.firebaseapp.com",
+
+ projectId:
+ "luu-lai",
+
+ storageBucket:
+ "luu-lai.firebasestorage.app",
+
+ messagingSenderId:
+ "843124781936",
+
+ appId:
+ "1:843124781936:web:f29bce0303b1819d93d5b5",
+
+ measurementId:
+ "G-1NBP9CELD2"
+
+};
+
+
+/* ==============================
+   FIREBASE KHỞI TẠO
+============================== */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+const provider = new GoogleAuthProvider();
+
+
+/* ==============================
+   KHÓA DỮ LIỆU CŨ
+   GIỮ NGUYÊN KHÓA CỦA BLOG
+============================== */
 
 const STORAGE_KEY = "luuLaiDiary";
 
@@ -1055,921 +977,1403 @@ let entries = [];
 
 let editingId = null;
 
+let currentUser = null;
 
-/* =================================================
-   ĐỌC LỊCH SỬ CŨ
-================================================= */
+let firebaseReady = false;
 
-function loadData(){
-
-    try{
-
-        const saved =
-            localStorage.getItem(STORAGE_KEY);
-
-        entries =
-            saved
-            ? JSON.parse(saved)
-            : [];
-
-        if(!Array.isArray(entries)){
-            entries = [];
-        }
-
-    }catch(error){
-
-        console.error(error);
-
-        entries = [];
-
-    }
-
-}
+let authLoading = true;
 
 
-/* =================================================
-   LƯU LẠI
-================================================= */
-
-function saveData(){
-
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(entries)
-    );
-
-}
-
-
-/* =================================================
+/* ==============================
    NGÀY
-================================================= */
+============================== */
 
 function today(){
 
-    const d = new Date();
+ const d = new Date();
 
-    return (
-        d.getFullYear()
-        + "-"
-        + String(d.getMonth()+1).padStart(2,"0")
-        + "-"
-        + String(d.getDate()).padStart(2,"0")
-    );
+ return (
+  d.getFullYear() +
+  "-" +
+  String(d.getMonth()+1).padStart(2,"0") +
+  "-" +
+  String(d.getDate()).padStart(2,"0")
+ );
 
 }
 
 
 function formatDate(date){
 
-    if(!date) return "";
+ if(!date) return "";
 
-    const p = date.split("-");
+ const p = date.split("-");
 
-    if(p.length !== 3){
-        return date;
-    }
-
-    return `${p[2]} · ${p[1]} · ${p[0]}`;
-
-}
-
-
-/* =================================================
-   CHỐNG LỖI HTML
-================================================= */
-
-function escapeHTML(value){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        value || "";
-
-    return div.innerHTML;
+ return (
+  p[2] +
+  " · " +
+  p[1] +
+  " · " +
+  p[0]
+ );
 
 }
 
 
-/* =================================================
-   CHUYỂN SECTION
-================================================= */
+/* ==============================
+   BẢO VỆ HTML
+============================== */
 
-function showSection(id,button){
+function escapeHTML(v){
 
-    document
-        .querySelectorAll(".section")
-        .forEach(section =>
-            section.classList.remove("active")
-        );
+ const d = document.createElement("div");
 
-    const section =
-        document.getElementById(id);
+ d.textContent = v ?? "";
 
-    if(section){
-        section.classList.add("active");
-    }
-
-
-    document
-        .querySelectorAll(".nav button")
-        .forEach(btn =>
-            btn.classList.remove("active")
-        );
-
-
-    if(button){
-        button.classList.add("active");
-    }
-
-
-    if(id === "diary"){
-        renderDiary();
-    }
-
-    if(id === "album"){
-        renderAlbum();
-    }
-
-    if(id === "timeline"){
-        renderTimeline();
-    }
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+ return d.innerHTML;
 
 }
 
 
-/* =================================================
-   MỞ FORM BÀI MỚI
-================================================= */
+/* ==============================
+   THÔNG BÁO
+============================== */
+
+function showMessage(msg){
+
+ alert(msg);
+
+}
+
+
+/* ==============================
+   CHUYỂN TRANG
+============================== */
+
+function showSection(id,btn){
+
+ document
+  .querySelectorAll(".section")
+  .forEach(s=>s.classList.remove("active"));
+
+ document
+  .getElementById(id)
+  .classList.add("active");
+
+ document
+  .querySelectorAll(".nav button")
+  .forEach(b=>b.classList.remove("active"));
+
+ if(btn) btn.classList.add("active");
+
+ if(id==="diary") renderDiary();
+
+ if(id==="album") renderAlbum();
+
+ if(id==="timeline") renderTimeline();
+
+ window.scrollTo({
+  top:0,
+  behavior:"smooth"
+ });
+
+}
+
+
+/* ==============================
+   BÀI VIẾT MỚI
+============================== */
 
 function newEntry(){
 
-    editingId = null;
+ editingId = null;
 
-    document.getElementById("writeTitle")
-        .textContent =
-        "Viết một điều để lưu lại";
+ clearForm(false);
 
-    document.getElementById("editNote")
-        .classList.remove("show");
+ updateEditUI();
 
-    document.getElementById("saveButton")
-        .textContent =
-        "Lưu lại ♡";
-
-    document.getElementById("cancelEditButton")
-        .style.display =
-        "none";
-
-    clearForm(false);
+}
 
 
-    const writeButton =
-        document.querySelectorAll(".nav button")[4];
+/* ==============================
+   NÉN ẢNH
+============================== */
 
-    showSection(
-        "write",
-        writeButton
+function compressImage(file){
+
+ return new Promise((resolve,reject)=>{
+
+  const reader = new FileReader();
+
+  reader.onload = ()=>{
+
+   const img = new Image();
+
+   img.onload = ()=>{
+
+    const max = 1000;
+
+    let w = img.width;
+
+    let h = img.height;
+
+    if(w > max || h > max){
+
+     const scale = Math.min(
+      max / w,
+      max / h
+     );
+
+     w = Math.round(w * scale);
+
+     h = Math.round(h * scale);
+
+    }
+
+    const canvas =
+     document.createElement("canvas");
+
+    canvas.width = w;
+
+    canvas.height = h;
+
+    const ctx =
+     canvas.getContext("2d");
+
+    ctx.drawImage(
+     img,
+     0,
+     0,
+     w,
+     h
     );
 
-}
+    resolve(
+     canvas.toDataURL(
+      "image/jpeg",
+      0.72
+     )
+    );
 
+   };
 
-/* =================================================
-   LƯU BÀI / CẬP NHẬT BÀI
-================================================= */
+   img.onerror = reject;
 
-function saveEntry(){
+   img.src = reader.result;
 
-    const date =
-        document.getElementById("entryDate").value;
+  };
 
-    const title =
-        document.getElementById("entryTitle")
-            .value.trim();
+  reader.onerror = reject;
 
-    const mood =
-        document.getElementById("entryMood").value;
+  reader.readAsDataURL(file);
 
-    const text =
-        document.getElementById("entryText")
-            .value.trim();
-
-    const file =
-        document.getElementById("entryImage")
-            .files[0];
-
-
-    if(!date || !title || !text){
-
-        alert(
-            "Bạn hãy nhập ngày, tiêu đề và nội dung nhé."
-        );
-
-        return;
-
-    }
-
-
-    /* =========================
-       ĐANG SỬA
-    ========================= */
-
-    if(editingId !== null){
-
-        const index =
-            entries.findIndex(
-                item =>
-                    Number(item.id) ===
-                    Number(editingId)
-            );
-
-
-        if(index === -1){
-
-            alert(
-                "Không tìm thấy bài viết cần sửa."
-            );
-
-            return;
-
-        }
-
-
-        const update =
-            function(newImage){
-
-                entries[index].date =
-                    date;
-
-                entries[index].title =
-                    title;
-
-                entries[index].mood =
-                    mood;
-
-                entries[index].text =
-                    text;
-
-
-                /*
-                   Không chọn ảnh mới:
-                   giữ nguyên ảnh cũ.
-                */
-
-                if(newImage !== null){
-
-                    entries[index].image =
-                        newImage;
-
-                }
-
-
-                saveData();
-
-                editingId = null;
-
-                updateEditUI();
-
-                updateStats();
-
-                alert(
-                    "Đã cập nhật bài viết ♡"
-                );
-
-                showDiary();
-
-            };
-
-
-        if(file){
-
-            const reader =
-                new FileReader();
-
-            reader.onload =
-                function(event){
-
-                    update(
-                        event.target.result
-                    );
-
-                };
-
-            reader.readAsDataURL(file);
-
-        }else{
-
-            update(null);
-
-        }
-
-        return;
-
-    }
-
-
-    /* =========================
-       BÀI MỚI
-    ========================= */
-
-    const create =
-        function(image){
-
-            const newItem = {
-
-                id: Date.now(),
-
-                date: date,
-
-                title: title,
-
-                mood: mood,
-
-                text: text,
-
-                image: image || ""
-
-            };
-
-
-            entries.unshift(newItem);
-
-            saveData();
-
-            updateStats();
-
-            clearForm();
-
-            alert(
-                "Đã lưu lại ♡"
-            );
-
-            showDiary();
-
-        };
-
-
-    if(file){
-
-        const reader =
-            new FileReader();
-
-        reader.onload =
-            function(event){
-
-                create(
-                    event.target.result
-                );
-
-            };
-
-        reader.readAsDataURL(file);
-
-    }else{
-
-        create("");
-
-    }
+ });
 
 }
 
 
-/* =================================================
+/* ==============================
+   CHUYỂN DỮ LIỆU CŨ
+   localStorage → FIRESTORE
+============================== */
+
+async function migrateOldLocalData(){
+
+ if(!currentUser) return;
+
+ const raw =
+  localStorage.getItem(STORAGE_KEY);
+
+ if(!raw) return;
+
+ let old = [];
+
+ try{
+
+  old = JSON.parse(raw) || [];
+
+ }catch(e){
+
+  return;
+
+ }
+
+ if(!old.length) return;
+
+
+ const q = query(
+  collection(db,"diary"),
+  where(
+   "ownerId",
+   "==",
+   currentUser.uid
+  )
+ );
+
+ const snap = await getDocs(q);
+
+ const existingLegacyIds =
+  new Set(
+   snap.docs.map(
+    d=>String(
+     d.data().legacyId || ""
+    )
+   )
+  );
+
+
+ let moved = 0;
+
+
+ for(const e of old){
+
+  if(
+   existingLegacyIds.has(
+    String(e.id)
+   )
+  ){
+
+   continue;
+
+  }
+
+
+  await addDoc(
+   collection(db,"diary"),
+   {
+
+    legacyId:String(e.id),
+
+    ownerId:
+     currentUser.uid,
+
+    date:
+     e.date || today(),
+
+    title:
+     e.title || "",
+
+    mood:
+     e.mood || "Bình yên",
+
+    text:
+     e.text || "",
+
+    image:
+     e.image || "",
+
+    createdAt:
+     Date.now()
+
+   }
+  );
+
+
+  moved++;
+
+ }
+
+
+ if(moved){
+
+  showMessage(
+   "Đã chuyển " +
+   moved +
+   " bài nhật ký cũ lên Firebase ♡"
+  );
+
+ }
+
+
+ /*
+  XÓA BẢN LOCAL SAU KHI ĐÃ
+  CHUYỂN THÀNH CÔNG
+ */
+
+ localStorage.removeItem(
+  STORAGE_KEY
+ );
+
+}
+
+
+/* ==============================
+   ĐỌC BÀI TỪ FIRESTORE
+============================== */
+
+async function loadEntries(){
+
+ if(!currentUser){
+
+  entries = [];
+
+  updateStats();
+
+  renderDiary();
+
+  renderAlbum();
+
+  renderTimeline();
+
+  return;
+
+ }
+
+
+ const q = query(
+  collection(db,"diary"),
+  where(
+   "ownerId",
+   "==",
+   currentUser.uid
+  )
+ );
+
+
+ const snap =
+  await getDocs(q);
+
+
+ entries =
+  snap.docs.map(
+   d=>({
+    id:d.id,
+    ...d.data()
+   })
+  );
+
+
+ entries.sort(
+  (a,b)=>{
+
+   const dateCompare =
+    (b.date||"")
+    .localeCompare(
+     a.date||""
+    );
+
+   return (
+    dateCompare ||
+    Number(
+     b.createdAt||0
+    ) -
+    Number(
+     a.createdAt||0
+    )
+   );
+
+  }
+ );
+
+
+ updateStats();
+
+ renderDiary();
+
+ renderAlbum();
+
+ renderTimeline();
+
+}
+
+
+/* ==============================
+   LƯU / SỬA BÀI
+============================== */
+
+async function saveEntry(){
+
+ if(!currentUser){
+
+  showMessage(
+   "Bạn hãy đăng nhập Google trước khi lưu bài nhé."
+  );
+
+  return;
+
+ }
+
+
+ const date =
+  document.getElementById(
+   "entryDate"
+  ).value;
+
+
+ const title =
+  document.getElementById(
+   "entryTitle"
+  ).value.trim();
+
+
+ const mood =
+  document.getElementById(
+   "entryMood"
+  ).value;
+
+
+ const text =
+  document.getElementById(
+   "entryText"
+  ).value.trim();
+
+
+ const file =
+  document.getElementById(
+   "entryImage"
+  ).files[0];
+
+
+ if(
+  !date ||
+  !title ||
+  !text
+ ){
+
+  showMessage(
+   "Bạn hãy nhập ngày, tiêu đề và nội dung nhé."
+  );
+
+  return;
+
+ }
+
+
+ let saveImage = null;
+
+
+ try{
+
+  if(file){
+
+   saveImage =
+    await compressImage(file);
+
+  }
+
+ }catch(err){
+
+  console.error(err);
+
+  showMessage(
+   "Không đọc được ảnh. Bạn thử chọn ảnh khác nhé."
+  );
+
+  return;
+
+ }
+
+
+ try{
+
+  /* ==========================
+     SỬA BÀI
+  ========================== */
+
+  if(editingId !== null){
+
+   const old =
+    entries.find(
+     x=>x.id===editingId
+    );
+
+
+   if(!old) return;
+
+
+   const data = {
+
+    date,
+
+    title,
+
+    mood,
+
+    text,
+
+    ownerId:
+     currentUser.uid,
+
+    updatedAt:
+     Date.now()
+
+   };
+
+
+   /*
+    Nếu chọn ảnh mới thì thay ảnh.
+    Nếu không chọn ảnh mới thì giữ
+    nguyên ảnh cũ.
+   */
+
+   if(saveImage !== null){
+
+    data.image =
+     saveImage;
+
+   }
+
+
+   await updateDoc(
+    doc(
+     db,
+     "diary",
+     editingId
+    ),
+    data
+   );
+
+
+   showMessage(
+    "Đã cập nhật ♡"
+   );
+
+  }
+
+  /* ==========================
+     TẠO BÀI MỚI
+  ========================== */
+
+  else{
+
+   await addDoc(
+    collection(db,"diary"),
+    {
+
+     date,
+
+     title,
+
+     mood,
+
+     text,
+
+     image:
+      saveImage || "",
+
+     ownerId:
+      currentUser.uid,
+
+     createdAt:
+      Date.now()
+
+    }
+   );
+
+
+   showMessage(
+    "Đã lưu lại ♡"
+   );
+
+  }
+
+
+  editingId = null;
+
+  clearForm();
+
+  updateEditUI();
+
+  await loadEntries();
+
+  showDiary();
+
+
+ }catch(err){
+
+  console.error(err);
+
+  showMessage(
+   "Không lưu được bài. Bạn kiểm tra lại Firestore Rules hoặc đăng nhập Google nhé."
+  );
+
+ }
+
+}
+
+
+/* ==============================
+   MỞ NHẬT KÝ
+============================== */
+
+function showDiary(){
+
+ const btn =
+  document.querySelectorAll(
+   ".nav button"
+  )[1];
+
+ showSection(
+  "diary",
+  btn
+ );
+
+}
+
+
+/* ==============================
    HIỂN THỊ NHẬT KÝ
-================================================= */
+============================== */
 
 function renderDiary(){
 
-    const box =
-        document.getElementById("diaryList");
-
-    const search =
-        (
-            document.getElementById("searchInput")
-                ?.value
-            || ""
-        )
-        .toLowerCase()
-        .trim();
+ const box =
+  document.getElementById(
+   "diaryList"
+  );
 
 
-    const list =
-        entries.filter(item => {
-
-            const text =
-                `${item.title || ""}
-                ${item.text || ""}
-                ${item.mood || ""}`
-                .toLowerCase();
-
-            return text.includes(search);
-
-        });
+ const input =
+  document.getElementById(
+   "searchInput"
+  );
 
 
-    if(list.length === 0){
-
-        box.innerHTML = `
-
-            <div class="empty">
-
-                Chưa có điều gì được lưu lại.
-
-                <br><br>
-
-                Hãy viết một điều để giữ lại.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+ const search =
+  (
+   input
+   ? input.value
+   : ""
+  )
+  .toLowerCase()
+  .trim();
 
 
-    box.innerHTML =
-        list.map(item => {
+ if(!currentUser){
 
-            const id =
-                Number(item.id);
+  box.innerHTML =
+   '<div class="empty">' +
+   'Hãy đăng nhập Google để xem nhật ký của bạn.' +
+   '</div>';
 
+  return;
 
-            return `
-
-                <article
-                    class="diary-card">
-
-                    <div class="tape"></div>
-
-                    <div class="card-date">
-
-                        ${formatDate(item.date)}
-
-                    </div>
-
-                    <h3>
-                        ${escapeHTML(item.title)}
-                    </h3>
-
-                    <div class="card-mood">
-
-                        ${escapeHTML(item.mood)}
-
-                    </div>
-
-                    <div class="card-text">
-
-                        ${escapeHTML(item.text)}
-
-                    </div>
-
-                    ${
-                        item.image
-                        ?
-                        `
-                        <img
-                            class="card-photo"
-                            src="${item.image}"
-                            alt="">
-                        `
-                        :
-                        ""
-                    }
+ }
 
 
-                    <!-- NÚT SỬA / XÓA -->
+ const list =
+  entries.filter(
+   e=>
+    (e.title||"")
+    .toLowerCase()
+    .includes(search)
 
-                    <div class="card-actions">
+    ||
 
-                        <button
-                            type="button"
-                            class="text-btn"
-                            onclick="editEntry(${id})">
+    (e.text||"")
+    .toLowerCase()
+    .includes(search)
 
-                            ✎ Sửa
+    ||
 
-                        </button>
+    (e.mood||"")
+    .toLowerCase()
+    .includes(search)
+  );
 
 
-                        <button
-                            type="button"
-                            class="text-btn delete-btn"
-                            onclick="deleteEntry(${id})">
+ if(!list.length){
 
-                            × Xóa
+  box.innerHTML =
+   '<div class="empty">' +
+   'Chưa có điều gì được lưu lại.' +
+   '<br><br>' +
+   'Hãy viết một điều để giữ lại.' +
+   '</div>';
 
-                        </button>
+  return;
 
-                    </div>
+ }
 
-                </article>
 
-            `;
+ box.innerHTML =
+  list.map(
+   e=>`
 
-        }).join("");
+<article class="diary-card">
+
+<div class="tape"></div>
+
+<div class="card-date">
+${formatDate(e.date)}
+</div>
+
+<h3>
+${escapeHTML(e.title)}
+</h3>
+
+<div class="card-mood">
+${escapeHTML(e.mood)}
+</div>
+
+<div class="card-text">
+${escapeHTML(e.text)}
+</div>
+
+${
+ e.image
+ ?
+ `<img class="card-photo" src="${e.image}" alt="">`
+ :
+ ""
+}
+
+<div class="card-actions">
+
+<button
+class="text-btn"
+onclick="editEntry('${e.id}')">
+✎ Sửa
+</button>
+
+<button
+class="text-btn"
+onclick="deleteEntry('${e.id}')">
+× Xóa
+</button>
+
+</div>
+
+</article>
+
+`
+  )
+  .join("");
 
 }
 
 
-/* =================================================
+/* ==============================
    SỬA BÀI
-================================================= */
+============================== */
 
 function editEntry(id){
 
-    const item =
-        entries.find(
-            entry =>
-                Number(entry.id) ===
-                Number(id)
-        );
+ if(!currentUser) return;
 
 
-    if(!item){
-
-        alert(
-            "Không tìm thấy bài viết."
-        );
-
-        return;
-
-    }
+ const e =
+  entries.find(
+   x=>x.id===id
+  );
 
 
-    editingId =
-        Number(item.id);
+ if(!e) return;
 
 
-    document.getElementById("entryDate")
-        .value =
-        item.date || today();
-
-    document.getElementById("entryTitle")
-        .value =
-        item.title || "";
-
-    document.getElementById("entryMood")
-        .value =
-        item.mood || "🌿 Bình yên";
-
-    document.getElementById("entryText")
-        .value =
-        item.text || "";
-
-    document.getElementById("entryImage")
-        .value =
-        "";
+ editingId = id;
 
 
-    updateEditUI();
+ document.getElementById(
+  "entryDate"
+ ).value =
+  e.date || today();
 
 
-    const writeButton =
-        document.querySelectorAll(".nav button")[4];
+ document.getElementById(
+  "entryTitle"
+ ).value =
+  e.title || "";
 
-    showSection(
-        "write",
-        writeButton
-    );
+
+ document.getElementById(
+  "entryMood"
+ ).value =
+  e.mood || "Bình yên";
+
+
+ document.getElementById(
+  "entryText"
+ ).value =
+  e.text || "";
+
+
+ document.getElementById(
+  "entryImage"
+ ).value =
+  "";
+
+
+ updateEditUI();
+
+
+ showSection(
+  "write",
+  document.querySelectorAll(
+   ".nav button"
+  )[4]
+ );
 
 }
 
 
-/* =================================================
+/* ==============================
    GIAO DIỆN CHẾ ĐỘ SỬA
-================================================= */
+============================== */
 
 function updateEditUI(){
 
-    const editing =
-        editingId !== null;
+ const editing =
+  editingId !== null;
 
 
-    document.getElementById("writeTitle")
-        .textContent =
-        editing
-        ?
-        "Sửa lại một điều đã lưu"
-        :
-        "Viết một điều để lưu lại";
+ document.getElementById(
+  "writeTitle"
+ ).textContent =
+  editing
+  ?
+  "Sửa lại một điều đã lưu"
+  :
+  "Viết một điều để lưu lại";
 
 
-    document.getElementById("editNote")
-        .classList.toggle(
-            "show",
-            editing
-        );
+ document.getElementById(
+  "editNote"
+ )
+ .classList
+ .toggle(
+  "show",
+  editing
+ );
 
 
-    document.getElementById("saveButton")
-        .textContent =
-        editing
-        ?
-        "Cập nhật ♡"
-        :
-        "Lưu lại ♡";
+ document.getElementById(
+  "saveButton"
+ ).textContent =
+  editing
+  ?
+  "Cập nhật ♡"
+  :
+  "Lưu lại ♡";
 
 
-    document.getElementById("cancelEditButton")
-        .style.display =
-        editing
-        ?
-        "inline-block"
-        :
-        "none";
+ document.getElementById(
+  "cancelEditButton"
+ ).style.display =
+  editing
+  ?
+  "inline-block"
+  :
+  "none";
 
 }
 
 
-/* =================================================
+/* ==============================
    HỦY SỬA
-================================================= */
+============================== */
 
 function cancelEdit(){
 
-    editingId = null;
+ editingId = null;
 
-    clearForm();
+ clearForm();
 
-    updateEditUI();
+ updateEditUI();
 
-    showDiary();
+ showDiary();
 
 }
 
 
-/* =================================================
+/* ==============================
    XÓA BÀI
-================================================= */
+============================== */
 
-function deleteEntry(id){
+async function deleteEntry(id){
 
-    const index =
-        entries.findIndex(
-            item =>
-                Number(item.id) ===
-                Number(id)
-        );
+ if(!currentUser) return;
 
 
-    if(index === -1){
-
-        alert(
-            "Không tìm thấy bài viết."
-        );
-
-        return;
-
-    }
+ const e =
+  entries.find(
+   x=>x.id===id
+  );
 
 
-    const title =
-        entries[index].title ||
-        "bài viết này";
+ if(!e) return;
 
 
-    const confirmDelete =
-        confirm(
-            `Bạn có chắc muốn xóa "${title}" không?`
-        );
+ if(
+  !confirm(
+   `Xóa “${e.title}” khỏi nhật ký?`
+  )
+ ){
+
+  return;
+
+ }
 
 
-    if(!confirmDelete){
-        return;
-    }
+ try{
+
+  await deleteDoc(
+   doc(
+    db,
+    "diary",
+    id
+   )
+  );
 
 
-    entries.splice(index,1);
+  entries =
+   entries.filter(
+    x=>x.id!==id
+   );
 
 
-    /*
-       LƯU VÀO ĐÚNG KHÓA CŨ
-    */
+  updateStats();
 
-    saveData();
+  renderDiary();
+
+  renderAlbum();
+
+  renderTimeline();
 
 
-    updateStats();
+ }catch(err){
 
-    renderDiary();
+  console.error(err);
+
+  showMessage(
+   "Không thể xóa bài. Vui lòng kiểm tra đăng nhập và Rules."
+  );
+
+ }
 
 }
 
 
-/* =================================================
+/* ==============================
    XÓA FORM
-================================================= */
+============================== */
 
-function clearForm(resetEdit = true){
+function clearForm(resetEdit=true){
 
-    document.getElementById("entryDate")
-        .value =
-        today();
-
-    document.getElementById("entryTitle")
-        .value =
-        "";
-
-    document.getElementById("entryMood")
-        .value =
-        "🌿 Bình yên";
-
-    document.getElementById("entryText")
-        .value =
-        "";
-
-    document.getElementById("entryImage")
-        .value =
-        "";
+ document.getElementById(
+  "entryDate"
+ ).value =
+  today();
 
 
-    if(resetEdit){
+ document.getElementById(
+  "entryTitle"
+ ).value =
+  "";
 
-        editingId = null;
 
-        updateEditUI();
+ document.getElementById(
+  "entryMood"
+ ).value =
+  "Bình yên";
 
-    }
+
+ document.getElementById(
+  "entryText"
+ ).value =
+  "";
+
+
+ document.getElementById(
+  "entryImage"
+ ).value =
+  "";
+
+
+ if(resetEdit){
+
+  editingId = null;
+
+  updateEditUI();
+
+ }
 
 }
 
 
-/* =================================================
+/* ==============================
    THỐNG KÊ
-================================================= */
+============================== */
 
 function updateStats(){
 
-    document.getElementById("countEntries")
-        .textContent =
-        entries.length;
+ document.getElementById(
+  "countEntries"
+ ).textContent =
+  entries.length;
 
 
-    document.getElementById("countPhotos")
-        .textContent =
-        entries.filter(
-            item =>
-                item.image
-        ).length;
+ document.getElementById(
+  "countPhotos"
+ ).textContent =
+  entries.filter(
+   e=>e.image
+  ).length;
 
 }
 
 
-/* =================================================
+/* ==============================
    ALBUM
-================================================= */
+============================== */
 
 function renderAlbum(){
 
-    const box =
-        document.getElementById("albumGrid");
+ const box =
+  document.getElementById(
+   "albumGrid"
+  );
 
 
-    const photos =
-        entries.filter(
-            item =>
-                item.image
-        );
+ const photos =
+  entries.filter(
+   e=>e.image
+  );
 
 
-    if(!photos.length){
+ if(!photos.length){
 
-        box.innerHTML = `
+  box.innerHTML =
+   '<div class="empty" style="grid-column:1/-1">' +
+   'Chưa có ảnh nào.' +
+   '<br><br>' +
+   'Hãy thêm ảnh vào một bài nhật ký.' +
+   '</div>';
 
-            <div
-                class="empty"
-                style="grid-column:1/-1">
+  return;
 
-                Chưa có ảnh nào.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+ }
 
 
-    box.innerHTML =
-        photos.map(
-            item => `
-
-                <div class="album-item">
-
-                    <img
-                        src="${item.image}"
-                        alt="">
-
-                </div>
-
-            `
-        ).join("");
+ box.innerHTML =
+  photos.map(
+   e=>
+   `<div class="album-item" title="${escapeHTML(e.title)}">
+    <img src="${e.image}" alt="">
+   </div>`
+  )
+  .join("");
 
 }
 
 
-/* =================================================
-   TIMELINE
-================================================= */
+/* ==============================
+   DÒNG THỜI GIAN
+============================== */
 
 function renderTimeline(){
 
-    const box =
-        document.getElementById("timelineList");
+ const box =
+  document.getElementById(
+   "timelineList"
+  );
 
 
-    if(!entries.length){
+ if(!entries.length){
 
-        box.innerHTML = `
+  box.innerHTML =
+   '<p style="color:#988e84">Chưa có dấu mốc nào.</p>';
 
-            <p>
-                Chưa có dấu mốc nào.
-            </p>
+  return;
 
-        `;
-
-        return;
-
-    }
+ }
 
 
-    const sorted =
-        [...entries].sort(
-            (a,b) =>
-                String(a.date)
-                    .localeCompare(
-                        String(b.date)
-                    )
-        );
+ const sorted =
+  [...entries].sort(
+   (a,b)=>
+    (a.date||"")
+    .localeCompare(
+     b.date||""
+    )
+  );
 
 
-    box.innerHTML =
-        sorted.map(
-            item => `
+ box.innerHTML =
+  sorted.map(
+   e=>
+   `
 
-                <div class="timeline-item">
+<div class="timeline-item">
 
-                    <div class="timeline-year">
+<div class="timeline-year">
+${formatDate(e.date)}
+</div>
 
-                        ${formatDate(item.date)}
+<h3>
+${escapeHTML(e.title)}
+</h3>
 
-                    </div>
+<div class="card-text">
+${escapeHTML(
+ (e.text||"").substring(0,180)
+)}
+${
+ (e.text||"").length>180
+ ?
+ "..."
+ :
+ ""
+}
+</div>
 
-                    <h3>
+<div class="card-actions">
 
-                        ${escapeHTML(item.title)}
+<button
+class="text-btn"
+onclick="editEntry('${e.id}')">
+✎ Sửa
+</button>
 
-                    </h3>
+<button
+class="text-btn"
+onclick="deleteEntry('${e.id}')">
+× Xóa
+</button>
 
-                    <div class="card-text">
+</div>
 
-                        ${escapeHTML(
-                            (item.text || "")
-                                .substring(0,180)
-                        )}
+</div>
 
-                        ${
-                            (item.text || "").length > 180
-                            ? "..."
-                            : ""
-                        }
-
-                    </div>
-
-                </div>
-
-            `
-        ).join("");
+`
+  )
+  .join("");
 
 }
 
 
-/* =================================================
+/* ==============================
+   ĐĂNG NHẬP GOOGLE
+============================== */
+
+async function loginGoogle(){
+
+ try{
+
+  await signInWithPopup(
+   auth,
+   provider
+  );
+
+ }catch(err){
+
+  console.error(err);
+
+
+  if(
+   err.code ===
+   "auth/popup-blocked"
+  ){
+
+   showMessage(
+    "Trình duyệt đang chặn cửa sổ đăng nhập. Hãy cho phép popup cho trang này rồi thử lại."
+   );
+
+  }else{
+
+   showMessage(
+    "Đăng nhập Google chưa thành công: " +
+    (err.message || err.code)
+   );
+
+  }
+
+ }
+
+}
+
+
+/* ==============================
+   ĐĂNG XUẤT
+============================== */
+
+async function logoutGoogle(){
+
+ await signOut(auth);
+
+}
+
+
+/* ==============================
+   HIỂN THỊ TRẠNG THÁI ĐĂNG NHẬP
+============================== */
+
+function updateAuthUI(){
+
+ const login =
+  document.getElementById(
+   "loginBtn"
+  );
+
+
+ const logout =
+  document.getElementById(
+   "logoutBtn"
+  );
+
+
+ const status =
+  document.getElementById(
+   "authStatus"
+  );
+
+
+ if(authLoading){
+
+  login.style.display =
+   "none";
+
+  logout.style.display =
+   "none";
+
+  status.textContent =
+   "Đang kết nối Firebase…";
+
+  return;
+
+ }
+
+
+ if(currentUser){
+
+  login.style.display =
+   "none";
+
+  logout.style.display =
+   "block";
+
+  status.textContent =
+   "Đang đăng nhập: " +
+   (
+    currentUser.displayName ||
+    currentUser.email ||
+    ""
+   );
+
+ }else{
+
+  login.style.display =
+   "block";
+
+  logout.style.display =
+   "none";
+
+  status.textContent =
+   "Đăng nhập để đồng bộ nhật ký trên mọi thiết bị.";
+
+ }
+
+}
+
+
+/* ==============================
+   THEO DÕI ĐĂNG NHẬP
+============================== */
+
+onAuthStateChanged(
+ auth,
+ async user=>{
+
+  currentUser = user;
+
+  authLoading = false;
+
+  updateAuthUI();
+
+
+  if(user){
+
+   firebaseReady = true;
+
+
+   try{
+
+    await migrateOldLocalData();
+
+    await loadEntries();
+
+   }catch(err){
+
+    console.error(err);
+
+    showMessage(
+     "Đã đăng nhập nhưng chưa đọc được Firestore. Hãy kiểm tra Rules."
+    );
+
+   }
+
+  }else{
+
+   entries = [];
+
+   updateStats();
+
+   renderDiary();
+
+   renderAlbum();
+
+   renderTimeline();
+
+  }
+
+ }
+);
+
+
+/* ==============================
+   ĐƯA HÀM RA NGOÀI
+   ĐỂ NÚT HTML GỌI ĐƯỢC
+============================== */
+
+window.showSection =
+ showSection;
+
+window.newEntry =
+ newEntry;
+
+window.saveEntry =
+ saveEntry;
+
+window.editEntry =
+ editEntry;
+
+window.deleteEntry =
+ deleteEntry;
+
+window.cancelEdit =
+ cancelEdit;
+
+window.clearForm =
+ clearForm;
+
+window.loginGoogle =
+ loginGoogle;
+
+window.logoutGoogle =
+ logoutGoogle;
+
+
+/* ==============================
    KHỞI ĐỘNG
-================================================= */
+============================== */
 
-loadData();
+document.getElementById(
+ "todayText"
+).textContent =
+ formatDate(today());
 
-document.getElementById("entryDate")
-    .value =
-    today();
 
-document.getElementById("currentYear")
-    .textContent =
-    new Date().getFullYear();
+document.getElementById(
+ "currentYear"
+).textContent =
+ new Date().getFullYear();
+
+
+clearForm();
 
 updateStats();
 
-renderDiary();
+updateAuthUI();
 
 </script>
 
